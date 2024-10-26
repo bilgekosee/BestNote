@@ -95,12 +95,13 @@ function Html() {
             Sayfaya görsel eklemek için &lt;img&gt; etiketi kullanılır. src
             özelliği görselin yolunu, alt ise alternatif metni belirtir.
           </p>
-          <div className="example" style={{ display: "flex" }}>
+          <div className="example" style={{ display: "flex", margin: "30px" }}>
             <img
               src="https://images.pexels.com/photos/879109/pexels-photo-879109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt="Güzel Resim"
               width="300"
               height="200"
+              style={{ margin: "0px" }}
             ></img>
             <pre style={{ margin: "50px" }}>
               <code>
@@ -200,8 +201,8 @@ height="200"></img>`}
       <div className="content-html">
         <h2>HTML Yorumları</h2>
         <p>
-          Kodun belirli kısımlarını açıklamak veya devre dışı bırakmak için
-          yorum eklenir. Yorumlar tarayıcıda görüntülenmez.
+          HTML'de açıklama eklemek için &lt;!-- ve --&gt; arasına metin yazılır.
+          Yorumlar tarayıcıda görüntülenmez ve kodu açıklamak için kullanılır.
         </p>
         <div
           className="example"
@@ -224,6 +225,424 @@ height="200"></img>`}
           </pre>
         </div>
       </div>
+      <div className="content-html">
+        <h2>HTML5 ve Yeni Özellikler</h2>
+        <p>
+          HTML5, HTML'in son sürümüdür ve modern web için yeni etiketler,
+          özellikler ve API'ler sunar. Bazı önemli HTML5 özellikleri:
+        </p>
+        <div style={{ marginTop: "20px" }}>
+          <li>
+            <strong> Semantik Etiketler</strong>: &lt;header&gt; (sayfa
+            başlığı), &lt;footer&gt; (sayfa alt bilgisi), &lt;section&gt;
+            (içerik bölümleri), &lt;article&gt; (bağımsız içerikler),
+            &lt;nav&gt; (navigasyon menüsü) gibi etiketlerle sayfa yapısını daha
+            iyi tanımlar.
+          </li>
+          <li>
+            <strong> Video ve Ses Desteği</strong>: &lt;video&gt; ve
+            &lt;audio&gt; etiketleri ile medya dosyalarını gömmeden oynatma
+            imkanı sağlar.
+          </li>
+          <li>
+            <strong>Gelişmiş Form Kontrolleri</strong>: &lt;date&gt;,
+            &lt;email&gt;, &lt;number&gt; gibi yeni input türleri ile formlar
+            daha kullanıcı dostu hale gelir.
+          </li>
+          <li>
+            <strong> Canvas ve SVG</strong>: 2D ve 3D grafikler oluşturmak için
+            &lt;canvas&gt; ve SVG desteği.
+          </li>
+          <li>
+            <strong> Yerel Depolama</strong>: localStorage ve sessionStorage ile
+            veri depolama imkanı.
+          </li>
+        </div>
+      </div>
+      <div className="content-html">
+        <h2>Tablolar</h2>
+
+        <li style={{ marginTop: "20px" }}>Tablo Yapısı</li>
+        <div
+          className="example"
+          style={{ display: "flex", gap: "200px", margin: "10px" }}
+        >
+          <table border={"1"}>
+            <tr>
+              <th>Başlık 1</th>
+              <th>Başlık 2</th>
+            </tr>
+            <tr>
+              <td>Veri 1</td>
+              <td>Veri 2</td>
+            </tr>
+          </table>
+          <pre>
+            <code>
+              {`<table  border={"1"}>
+  <tr>
+   <th>Başlık 1</th>
+   <th>Başlık 2</th>
+  </tr>
+  <tr>
+   <td>Veri 1</td>
+   <td>Veri 2</td>
+  </tr>
+ </table>
+`}
+            </code>
+          </pre>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <strong>Başlıca Etiketler</strong>
+            </li>
+            <li style={{ marginLeft: "10px" }}>
+              <strong> &lt;table&gt;</strong>: Tablo yapısını belirler.
+            </li>
+            <li style={{ marginLeft: "10px" }}>
+              <strong> &lt;tr&gt;</strong>: Satır tanımlar.
+            </li>
+            <li style={{ marginLeft: "10px" }}>
+              <strong> &lt;th&gt;</strong>: Tablo başlığı.
+            </li>
+            <li style={{ marginLeft: "10px" }}>
+              <strong> &lt;td&gt;</strong>: Tablo hücresi.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="content-html">
+        <h2>HTML'de CSS Kullanımı</h2>
+        <p>CSS ile HTML’de stil uygulamak için 3 farklı yöntem vardır:</p>
+        <div className="example">
+          <li>
+            <strong>Inline</strong>: Inline CSS, doğrudan HTML etiketinin style
+            özelliği ile uygulanır. Tek bir öğeye hızlıca stil vermek
+            istediğinizde kullanılır, ancak büyük projelerde önerilmez.
+          </li>
+          <pre>
+            <code>
+              {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>Inline CSS Örneği</title>
+</head>
+<body>
+  <h1 style="color: blue; font-size: 24px;">Merhaba, Inline CSS!</h1>
+  <p style="color: green; text-align: center;">Bu paragraf inline CSS ile renklendirildi.</p>
+</body>
+</html>
+
+`}
+            </code>
+          </pre>
+        </div>
+        <div className="example">
+          <li>
+            <strong>Internal</strong>: Internal CSS, &lt;style&gt; etiketi ile
+            HTML dosyasının &lt;head&gt;bölümünde tanımlanır. Aynı HTML
+            sayfasında birden fazla öğeyi biçimlendirmek istediğinizde
+            kullanılabilir. Ancak, büyük projelerde her sayfa için ayrı ayrı
+            tanımlamalar yapmak zorlayıcı olabilir.
+          </li>
+          <pre>
+            <code>
+              {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>Internal CSS Örneği</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: blue;
+      font-size: 24px;
+      text-align: center;
+    }
+    p {
+      color: green;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Merhaba, Internal CSS!</h1>
+  <p>Bu paragraf internal CSS ile renklendirildi.</p>
+</body>
+</html>
+
+
+`}
+            </code>
+          </pre>
+        </div>
+      </div>
+      <div className="example">
+        <li>
+          <strong>External</strong>:External CSS, ayrı bir .css dosyasında
+          tanımlanır ve HTML dosyasına &lt;link&gt; etiketi ile bağlanır. Bu
+          yöntem, çok sayfalı projelerde stil dosyasını yeniden kullanarak stil
+          yönetimini kolaylaştırır.
+        </li>
+        <ol style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <li value={"1"}>
+            style.css adında bir CSS dosyası oluşturun ve stil tanımlarını
+            ekleyin:
+          </li>
+        </ol>
+        <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <code>
+            {`/* style.css */
+body {
+  background-color: #f0f0f0;
+}
+h1 {
+  color: blue;
+  font-size: 24px;
+  text-align: center;
+}
+p {
+  color: green;
+  text-align: center;
+}
+
+
+
+`}
+          </code>
+        </pre>
+
+        <ol style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <li value={"2"}>
+            Ardından, HTML dosyanıza bu CSS dosyasını bağlayın:
+          </li>
+        </ol>
+        <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <code>
+            {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>External CSS Örneği</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Merhaba, External CSS!</h1>
+  <p>Bu paragraf external CSS ile renklendirildi.</p>
+</body>
+</html>
+
+
+`}
+          </code>
+        </pre>
+        <p>
+          Bu yöntemlerin her biri farklı durumlarda faydalıdır, ancak genelde
+          büyük projelerde External CSS kullanarak stil yönetimini merkezi hale
+          getirmek en etkili yoldur.
+        </p>
+      </div>
+
+      <div className="content-html">
+        <h2>HTML Attributes (Özellikler)</h2>
+        <p>
+          HTML özellikleri (attributes), HTML etiketlerine çeşitli
+          işlevsellikler ekleyerek içeriklerin nasıl görüneceğini veya
+          davranacağını kontrol etmemizi sağlar. Aşağıda en yaygın dört HTML
+          özelliğini ve kullanım alanlarını ayrıntılı bir şekilde açıklayacağım.
+        </p>
+        <ol style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <li value={"1"}>
+            <strong>class özelliği</strong>:class özelliği, bir veya birden
+            fazla HTML elementine CSS ile stil vermek veya JavaScript ile seçmek
+            için kullanılır. Aynı sınıf adını birden fazla öğeye verebiliriz; bu
+            da aynı stili veya işlevi birçok öğeye uygulamamızı sağlar.
+          </li>
+        </ol>
+        <div className="example">
+          <li value={"1"} style={{ marginLeft: "40px", marginTop: "10px" }}>
+            <strong>Özellik</strong>: Birden fazla öğeye aynı sınıf adını
+            vererek toplu stil uygulamaları yapılabilir.
+          </li>
+          <li value={"2"} style={{ marginLeft: "40px", marginTop: "10px" }}>
+            <strong>Kullanım</strong>: CSS veya JavaScript’te .class-adı olarak
+            seçilir.
+          </li>
+          <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+            <code>
+              {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>class Özelliği</title>
+  <style>
+    .mavi-yazi {
+      color: blue;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="mavi-yazi">Bu başlık mavi renkte</h1>
+  <p class="mavi-yazi">Bu paragraf da mavi renkte</p>
+</body>
+</html>
+
+
+
+`}
+            </code>
+          </pre>
+          <p>
+            Bu örnekte, mavi-yazi sınıfı, hem başlığa (&lt;h1&gt;) hem de
+            paragrafa (&lt;p&gt;) uygulanarak her ikisinin de mavi renkte
+            görünmesini sağlar.
+          </p>
+        </div>
+      </div>
+
+      <ol style={{ marginLeft: "40px", marginTop: "10px" }}>
+        <li value={"2"}>
+          <strong>id özelliği</strong>: id özelliği, bir HTML öğesine benzersiz
+          bir kimlik atamak için kullanılır. Her sayfada yalnızca bir defa
+          kullanılmalıdır; çünkü her id benzersiz olmalıdır. id, genellikle tek
+          bir öğeyi CSS veya JavaScript ile seçmek istediğinizde kullanılır.
+        </li>
+      </ol>
+      <div className="example">
+        <li value={"1"} style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <strong>Özellik</strong>: Sayfa içinde bir defa kullanılır; her id
+          benzersizdir.
+        </li>
+        <li value={"2"} style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <strong>Kullanım</strong>: CSS veya JavaScript’te #id-adı olarak
+          seçilir.
+        </li>
+        <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <code>
+            {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>id Özelliği</title>
+  <style>
+    #özel-yazi {
+      color: red;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="özel-yazi">Bu başlık kırmızı renkte ve kalın yazılmış</h1>
+  <p>Bu paragraf normal stilindedir.</p>
+</body>
+</html>
+
+
+
+
+`}
+          </code>
+        </pre>
+        <p>
+          Bu örnekte, özel-yazi id’si h1 etiketine atanmış ve yalnızca bu öğeyi
+          kırmızı renkte, kalın yazı stili ile göstermektedir.
+        </p>
+      </div>
+
+      <ol style={{ marginLeft: "40px", marginTop: "10px" }}>
+        <li value={"3"}>
+          <strong>style özelliği</strong>: style özelliği, öğelere doğrudan CSS
+          stili eklemek için kullanılır. style özelliği, öğe düzeyinde stil
+          vermek için kullanılır ve inline olarak tanımlanır. Ancak, büyük
+          projelerde veya tekrar eden stillerde önerilmez; daha çok geçici veya
+          belirli bir öğeye özel stil uygulamaları için uygundur.
+        </li>
+      </ol>
+      <div className="example">
+        <li value={"1"} style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <strong>Özellik</strong>: Sadece bir öğeye özel, inline stil vermek
+          için kullanılır.
+        </li>
+        <li value={"2"} style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <strong>Kullanım</strong>: &lt;element style="property: value;"&gt;
+        </li>
+        <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <code>
+            {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>style Özelliği</title>
+</head>
+<body>
+  <h1 style="color: green; text-align: center;">Bu başlık yeşil ve ortalanmış</h1>
+  <p style="color: purple;">Bu paragraf mor renkte</p>
+</body>
+</html>
+
+
+
+
+`}
+          </code>
+        </pre>
+        <p>
+          Bu örnekte, style özelliğiyle h1 başlığına yeşil renk ve ortalama,
+          paragrafa ise mor renk verilmiştir. Her iki stil doğrudan ilgili
+          etikete uygulanır.
+        </p>
+      </div>
+
+      <ol style={{ marginLeft: "40px", marginTop: "10px" }}>
+        <li value={"4"}>
+          <strong>alt özelliği</strong>: alt özelliği, &lt;img&gt; etiketiyle
+          kullanılan ve görsel dosyası yüklenemediğinde veya erişilemediğinde
+          alternatif metin sağlayan bir özelliktir. Özellikle erişilebilirlik
+          açısından önemlidir; ekran okuyucular bu metni okuyarak görme engelli
+          kullanıcılara görsel içeriği açıklayabilir. Ayrıca, alt metin SEO
+          açısından da önem taşır.
+        </li>
+      </ol>
+      <div className="example">
+        <li value={"1"} style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <strong>Özellik</strong>: Görüntü bulunamadığında veya ekran
+          okuyucularda açıklama sağlar.
+        </li>
+        <li value={"2"} style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <strong>Kullanım</strong>: &lt;img src="image.jpg" alt="Açıklayıcı
+          metin&gt;
+        </li>
+        <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+          <code>
+            {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>alt Özelliği</title>
+</head>
+<body>
+  <h1>Görsel Örneği</h1>
+  <img src="meyve.jpg" alt="Bir sepet dolusu taze meyve">
+</body>
+</html>
+
+
+
+
+`}
+          </code>
+        </pre>
+        <p>
+          Bu örnekte, meyve.jpg görseli yüklenemediğinde tarayıcı veya ekran
+          okuyucu "Bir sepet dolusu taze meyve" metnini gösterecektir. Bu sayede
+          görselin içeriği hakkında bilgi verilir.
+        </p>
+      </div>
+      <p>
+        Bu özellikler, HTML yapısına ek işlevler ve stiller kazandırmanın temel
+        yoludur. Her bir özellik farklı senaryolarda kullanılabilir ve
+        projelerin yönetimini kolaylaştırır.
+      </p>
     </div>
   );
 }

@@ -4,8 +4,11 @@ body {
   padding: 0;
   height: 100%;
   overflow-y: auto;
-  overflow-x: auto;
+  overflow-x: hidden;
   box-sizing: border-box;
+}
+.example {
+  margin: 20px;
 }
 .content-html {
   margin: 20px;

@@ -643,6 +643,120 @@ p {
         yoludur. Her bir özellik farklı senaryolarda kullanılabilir ve
         projelerin yönetimini kolaylaştırır.
       </p>
+      <div className="content-html">
+        <h2>SEO ve Erişilebilirlik için HTML İpuçları</h2>
+        <ul>
+          <li style={{ marginTop: "10px" }}>
+            <strong>Alt Etiketler</strong>:Görseller için alt özellikleri
+            kullanarak erişilebilirliği artırın.
+          </li>
+          <li style={{ marginTop: "10px" }}>
+            <strong>Başlık Yapısı</strong>:&lt;h1&gt; ile &lt;h6&gt; arasında
+            mantıklı bir sıra kullanın.
+          </li>
+          <li style={{ marginTop: "10px" }}>
+            <strong>Anlamlı Bağlantılar</strong>:href özelliklerini doğru ve
+            anlamlı açıklamalarla tanımlayın.
+          </li>
+          <li style={{ marginTop: "10px" }}>
+            <strong>Meta Etiketleri</strong>:
+            <li style={{ marginLeft: "40px", marginTop: "10px" }}>
+              <strong>Description</strong>:&lt;meta name="description"
+              content="açıklama"&gt; etiketi sayfa içeriğinbi tanımlar.
+            </li>
+            <li style={{ marginLeft: "40px", marginTop: "10px" }}>
+              <strong>Keywords</strong>:&lt;meta name="keywords" content="HTML
+              ,CSS, JavaScript"&gt; arama motorlarına yardımcı olur.
+            </li>
+          </li>
+        </ul>
+      </div>
+      <div className="content-html">
+        <h2>HTML Best Practices (En İyi Uygulamalar)</h2>
+        <ul style={{ marginTop: "10px" }}>
+          <li>
+            <strong>Yorum Ekleme</strong>:Kodun anlaşılabilirliğini artırmak
+            için HTML yorumları ekleyin.Amam bu yorumların gereksiz ve fazla
+            olmamasına dikkat edin.
+          </li>
+          <li>
+            <strong>Kullanıcı Dostu Formlar</strong>: Form elemanlarına label
+            ekleyin.
+          </li>
+          <li>
+            <strong>Doğru Etiket Kullanımı</strong>: İçerik türüne uygun
+            etiketleri seçin.
+          </li>
+          <li>
+            <strong>HTML Validasyonu</strong>: W3C Validator ile kodunuzu
+            doğrulayın.
+          </li>
+        </ul>
+      </div>
+      <div className="content-html">
+        <h2>Gelişmiş HTML Özellikleri</h2>
+        <ul style={{ marginTop: "10px" }}>
+          <li>
+            <strong>Iframe (İç İçerik Çerçevesi)</strong>:&lt;iframe&gt;
+            etiketi, başka bir web sayfasını veya içeriği kendi sayfanıza gömmek
+            için kullanılır. Bu özellik, özellikle harici web sayfalarını,
+            videoları veya haritaları kendi sayfanızda göstermek istediğinizde
+            kullanışlıdır.
+          </li>
+          <ul>
+            <li style={{ marginTop: "10px", marginLeft: "20px" }}>
+              <strong>Kullanım</strong>: &lt;iframe
+              src="https://en.wikipedia.org/wiki/Shoto_Todoroki"&gt;&lt;/iframe&gt;
+            </li>
+
+            <li style={{ marginTop: "10px", marginLeft: "20px" }}>
+              <strong>Özellikler</strong>:
+              <ul style={{ marginTop: "10px", marginLeft: "40px" }}>
+                <li>
+                  <strong>src</strong>; Gösterilecek web sayfasının URL sini
+                  belirtir.
+                </li>
+                <li>
+                  <strong>width ve height</strong>; Çerçevenin genişlik
+                  yüksekliğini ayarlar.
+                </li>
+                <li>
+                  <strong>frameborder</strong>; Çerçevenin etrafındaki sınır
+                  çizgisi (0 veya 1).
+                </li>
+                <li>
+                  <strong>allowfullscreen</strong>; Çerçevenin tam ekran modunda
+                  gösterilmesini sağlar.
+                </li>
+              </ul>
+            </li>
+            <div className="example">
+              <li>
+                <strong>Örnek</strong>:
+              </li>
+              <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+                <code>
+                  {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>Iframe Örneği</title>
+</head>
+<body>
+  <h1>Iframe Kullanımı</h1>
+  <iframe src="https://en.wikipedia.org/wiki/Shoto_Todoroki" width="600" height="400" frameborder="0" allowfullscreen>
+    Tarayıcınız iframe'i desteklemiyor.
+  </iframe>
+</body>
+</html>
+
+
+`}
+                </code>
+              </pre>
+            </div>
+          </ul>
+        </ul>
+      </div>
     </div>
   );
 }

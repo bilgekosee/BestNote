@@ -26,6 +26,9 @@ function App() {
   const handleHtmlButtonClick = () => {
     navigate("/Html");
   };
+  const handleButtonCssClick = () => {
+    navigate("/CSS");
+  };
 
   return (
     <div className="App">
@@ -66,7 +69,7 @@ function App() {
                 plan ve dokular” gibi ögelerde arzu edilen değişiklikleri
                 tanımlamanızı sağlayan bir programlama dilidir.
               </p>
-              <button>Read More</button>
+              <button onClick={handleButtonCssClick}>Read More</button>
             </div>
           </li>
           <li

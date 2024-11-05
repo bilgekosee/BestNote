@@ -1,27 +1,24 @@
+html,
 body {
-  padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
 }
-.example {
-  margin: 20px;
-}
-.content-html {
-  margin: 20px;
-}
-.html-content-container img {
+.css-container img {
   border-radius: 15px;
   padding: 10px;
   display: flex;
   margin: auto;
 }
-.html-content-container h2 {
+.css-container h2 {
   font-family: "Merriweather", serif;
   font-style: normal;
   margin-top: 30px;
   margin-left: 15px;
 }
-.html-content-container p {
+.css-container p {
   margin-left: 15px;
+}
+.content-css {
+  margin: 20px;
 }

@@ -757,6 +757,158 @@ p {
           </ul>
         </ul>
       </div>
+
+      <div className="content-html">
+        <ul style={{ marginTop: "10px" }}>
+          <li>
+            <strong>Embed (Gömülü İçerik)</strong>: &lt;embed&gt; etiketi,
+            harivi medya içeriklerini örneğin(PDF,viide veya Flash dosyaları)
+            doğrudan sayfaya eklemek için kullanılır. Özellikle medya
+            dosyalarını veya harici belgeleme içeriklerini görtüntülemek için
+            idealdir. &lt;embed&gt; , modern tarayıcularda gidewrek azalan Flash
+            desteğine alternatif olarak kullanılır, ancak video ve ses dosyaları
+            için &lt;video&gt; ve &lt;audio&gt; etiketleri tercih edilir.
+          </li>
+          <ul>
+            <li style={{ marginTop: "10px", marginLeft: "20px" }}>
+              <strong>Kullanım</strong>: &lt;embed src="dosya.yolu"
+              type="dosya/tipi"&gt;&lt;/embed&gt;
+            </li>
+
+            <li style={{ marginTop: "10px", marginLeft: "20px" }}>
+              <strong>Özellikler</strong>:
+              <ul style={{ marginTop: "10px", marginLeft: "40px" }}>
+                <li>
+                  <strong>src</strong>; Gösterilecek medya dosyasının yolunu
+                  belirtir.
+                </li>
+                <li>
+                  <strong>type</strong>; Dosyanın türünü belirtir (örneğin,
+                  application/pdf veya video/mp4)
+                </li>
+                <li>
+                  <strong>width ve height </strong>; Dosyanın genişlik ve
+                  yüksekliğini ayarlar.
+                </li>
+              </ul>
+            </li>
+            <div className="example">
+              <li>
+                <strong>Örnek</strong>:
+              </li>
+              <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+                <code>
+                  {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>Embed Örneği</title>
+</head>
+<body>
+  <h1>PDF Belgesini Gösterme</h1>
+  <embed src="dosya.pdf" type="application/pdf" width="600" height="500">
+</body>
+</html>
+
+
+
+`}
+                </code>
+              </pre>
+              <p>
+                Bu örnekte, belirtilen pdf dosyası tarayıcı destekliyorsa
+                doğrudan sayfa içinde görüntülenecektir. Kullanıcı, sayfa
+                içerisinde dosyayı indirebilir veya gezinebilir.
+              </p>
+            </div>
+          </ul>
+        </ul>
+      </div>
+      <div className="content-html">
+        <ul style={{ marginTop: "10px" }}>
+          <li>
+            <strong>Responsive Design ( Duyarlı Tasarım) </strong>: Responsive
+            design, web sayfalarının farklı ekran boyutlarında ve cihazlarda
+            uyumlu bir şekilde görüntülenmesini sağlar. Bu uyumluluğu sağlamak
+            için &lt;meta&gt; etiketindeki viewport ayarı kullanılır. Mobil
+            uyumluluğu arttırmak için tasarımda esnek düzenler ve CSS media
+            query'leri de yaygın olarak kullanır.
+          </li>
+          <ul>
+            <li style={{ marginTop: "10px", marginLeft: "20px" }}>
+              <strong>Kullanım</strong>: &lt;meta name="viewport"
+              content="width=device-width, initial-scale=1.0"&gt;&lt;/embed&gt;
+              <li style={{ marginTop: "10px", marginLeft: "40px" }}>
+                <strong>width=device-width</strong>: Sayfanın genişliğini cihaz
+                ekranına ayarlayarak, içeriklerin taşmasına engel olur.
+              </li>
+              <li style={{ marginTop: "10px", marginLeft: "40px" }}>
+                <strong>initial-scale=1.0</strong>: Sayfanın başlangıç ölçeğini
+                belirler,yani açıldığında tam boyutunda görünmesini sağlar.
+              </li>
+            </li>
+
+            <div className="example">
+              <li>
+                <strong>Örnek</strong>:
+              </li>
+              <pre style={{ marginLeft: "40px", marginTop: "10px" }}>
+                <code>
+                  {`<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>Responsive Design Örneği</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+    .box {
+      width: 100%;
+      padding: 20px;
+      background-color: lightblue;
+    }
+    @media (min-width: 600px) {
+      .box {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Responsive Tasarım</h1>
+    <div class="box">Bu kutu mobilde %100 genişlikte, daha geniş ekranlarda %50 genişlikte.</div>
+  </div>
+</body>
+</html>
+
+
+
+
+`}
+                </code>
+              </pre>
+              <p>
+                Bu örnekte, meta viewport ayarı ile sayfa genişliği cihaz
+                ekranına göre ayarlanır. .box sınıfı içindeki kutu, ekran
+                600px’den geniş olduğunda %50 genişlikte görüntülenir, küçük
+                ekranlarda ise %100 genişlikte olur.
+              </p>
+            </div>
+          </ul>
+        </ul>
+      </div>
+      <p>
+        Bu özellikler modern web tasarımında etkileşimi artırır, içerik gömme ve
+        mobil uyumluluk gibi işlevsellikler sağlar.
+      </p>
     </div>
   );
 }

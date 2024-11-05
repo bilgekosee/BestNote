@@ -22,3 +22,24 @@ body {
 .content-css {
   margin: 20px;
 }
+.ul-content {
+  margin: 20px;
+}
+.content-css li {
+  margin-top: 10px;
+}
+
+.example-css {
+  display: flex;
+  gap: 50%;
+  border: dotted 1px red;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+.exercise {
+  border: dotted 1px rgb(0, 8, 255);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px;
+}

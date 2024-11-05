@@ -6,6 +6,9 @@ body {
 }
 .example {
   margin: 20px;
+  border: dotted 1px red;
+  border-radius: 10px;
+  padding: 20px;
 }
 .content-html {
   margin: 20px;

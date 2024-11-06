@@ -290,7 +290,189 @@ h1, h2, p {
             </ul>
           </li>
         </ul>
+
         <img src="./css.png" style={{ margin: 0, marginLeft: "40px" }}></img>
+        <ul style={{ marginLeft: "15px" }}>
+          <li>
+            <strong>Width ve Height Özellikleri</strong>:width, height,
+            max-width, min-height gibi özelliklerle kutuları boyutlandırmak için
+            kullanılır.
+          </li>
+        </ul>
+        <ul style={{ marginLeft: "15px" }}>
+          <li>
+            <strong>Border ve Padding Extraları</strong>:
+            <ul style={{ marginLeft: "15px" }}>
+              <li>
+                <strong>Tek değerli kullanım</strong>: border-radius:10px;
+              </li>
+              <li>
+                <strong>Çift değerli kullanım</strong>: border-radius:20px 50px;
+              </li>
+              <li>
+                <strong>
+                  Farklı Köşeler İçin Farklı Border-radius Değerleri
+                </strong>
+                : border-radius:10px 20px 30px 40px;
+              </li>
+              <li>
+                <strong>Daire için</strong>: border-radius:50%;
+              </li>
+              <div className="border-example">
+                <div className="boxtekDeger">Border radius 10px</div>
+                <div className="ciftDeger">Border radius 20px 50px</div>
+                <div className="cokDeger">
+                  Border radius 10px 20px 30px 40px
+                </div>
+                <div className="daire">daire</div>
+              </div>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div className="content-css">
+        <h2>Düzen ve Konumlandırma</h2>
+        <ul style={{ marginLeft: "15px" }}>
+          <li>
+            <strong>Display özellikleri</strong>:display: block;, display:
+            inline;, display: inline-block;, display: none;
+          </li>
+          <div className="display-example">
+            <div>
+              <h1>The display Property</h1>
+
+              <h2>display: none:</h2>
+              <div>
+                Lorem ipsum dolor.... <p class="ex1">HELLO WORLD!</p> Vestibulum
+                volutpat tellus diam....
+              </div>
+
+              <h2>display: inline:</h2>
+              <div>
+                Lorem ipsum dolor.... <p class="ex2">HELLO WORLD!</p> Vestibulum
+                volutpat tellus diam....
+              </div>
+
+              <h2>display: block:</h2>
+              <div>
+                Lorem ipsum dolor.... <p class="ex3">HELLO WORLD!</p> Vestibulum
+                volutpat tellus diam....
+              </div>
+
+              <h2>display: inline-block:</h2>
+              <div>
+                Lorem ipsum dolor.... <p class="ex4">HELLO WORLD!</p> Vestibulum
+                volutpat tellus diam....
+              </div>
+            </div>
+            <div>
+              <pre>
+                <code>
+                  {`<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {color: red;}
+
+p.ex1 {display: none;}
+p.ex2 {display: inline;}
+p.ex3 {display: block;}
+p.ex4 {display: inline-block;}
+</style>
+</head>
+<body>
+<h1>The display Property</h1>
+
+<h2>display: none:</h2>
+<div>
+Lorem ipsum dolor.... <p class="ex1">HELLO WORLD!</p> Vestibulum volutpat tellus diam....
+</div>
+
+<h2>display: inline:</h2>
+<div>
+Lorem ipsum dolor.... <p class="ex2">HELLO WORLD!</p> Vestibulum volutpat tellus diam....
+</div>
+
+<h2>display: block:</h2>
+<div>
+Lorem ipsum dolor.... <p class="ex3">HELLO WORLD!</p> Vestibulum volutpat tellus diam....
+</div>
+
+<h2>display: inline-block:</h2>
+<div>
+Lorem ipsum dolor.... <p class="ex4">HELLO WORLD!</p> Vestibulum volutpat tellus diam....
+</div>
+
+</body>
+</html>
+
+
+`}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <li>
+            <strong>Float ve Clear Kullanımı</strong>:
+            <ul style={{ marginLeft: "15px" }}>
+              <li>
+                float: left;, float: right; ile elemanları yan yana dizme.
+              </li>
+              <li>
+                Clear: clear: both; kullanarak float ile yerleşmiş elemanların
+                hizalanmasını sıfırlama.
+              </li>
+              <div className="example-css">
+                <div>
+                  <p>
+                    <h4>Float Right</h4>
+                    <img
+                      className="imgFloat"
+                      src="https://plus.unsplash.com/premium_photo-1661674514856-17f29bd480b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      width="100px"
+                      height="100px"
+                    ></img>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus imperdiet, nulla et dictum interdum, nisi lorem
+                    egestas odio, vitae scelerisque enim ligula venenatis dolor.
+                    Maecenas nisl est, ultrices nec congue eget, auctor vitae
+                    massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante
+                    ligula, facilisis sed ornare eu, lobortis in odio. Praesent
+                    convallis urna a lacus interdum ut hendrerit risus congue.
+                    Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim
+                    ac. In at libero sed nunc venenatis imperdiet sed ornare
+                    turpis. Donec vitae dui eget tellus gravida venenatis.
+                    Integer fringilla congue eros non fermentum. Sed dapibus
+                    pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis
+                    diam velit.
+                  </p>
+                  <p style={{ marginTop: "20px" }}>
+                    <h4>Float Left</h4>
+                    <img
+                      className="imgFloatLeft"
+                      src="https://plus.unsplash.com/premium_photo-1661674514856-17f29bd480b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      width="100px"
+                      height="100px"
+                    ></img>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus imperdiet, nulla et dictum interdum, nisi lorem
+                    egestas odio, vitae scelerisque enim ligula venenatis dolor.
+                    Maecenas nisl est, ultrices nec congue eget, auctor vitae
+                    massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante
+                    ligula, facilisis sed ornare eu, lobortis in odio. Praesent
+                    convallis urna a lacus interdum ut hendrerit risus congue.
+                    Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim
+                    ac. In at libero sed nunc venenatis imperdiet sed ornare
+                    turpis. Donec vitae dui eget tellus gravida venenatis.
+                    Integer fringilla congue eros non fermentum. Sed dapibus
+                    pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis
+                    diam velit.
+                  </p>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   );

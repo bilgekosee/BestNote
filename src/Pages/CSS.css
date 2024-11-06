@@ -43,3 +43,75 @@ body {
   padding: 30px;
   margin: 20px;
 }
+.boxtekDeger {
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 10px;
+}
+.ciftDeger {
+  border: solid 2px black;
+  border-radius: 20px 50px;
+  padding: 10px;
+}
+.cokDeger {
+  border: solid 2px black;
+  border-radius: 10px 20px 30px 40px;
+  padding: 10px;
+}
+.daire {
+  border: solid 2px black;
+  border-radius: 50%;
+  padding: 10px;
+  overflow-wrap: break-word;
+}
+.border-example {
+  display: flex;
+  gap: 5px;
+  border: dotted 1px red;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+p.ex1 {
+  display: none;
+  color: red;
+}
+p.ex2 {
+  display: inline;
+  color: red;
+}
+p.ex3 {
+  display: block;
+  color: red;
+}
+p.ex4 {
+  display: inline-block;
+  color: red;
+}
+p.floatRight {
+  float: right;
+  border: solid 1px black;
+  background-color: black;
+  color: white;
+}
+p.floatLeft {
+  float: left;
+  border: solid 1px black;
+  background-color: black;
+  color: white;
+}
+.display-example {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: dotted 1px red;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+.imgFloat {
+  float: right;
+}
+.imgFloatLeft {
+  float: left;
+}

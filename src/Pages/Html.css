@@ -9,6 +9,7 @@ body {
   border: dotted 1px red;
   border-radius: 10px;
   padding: 20px;
+  background-color: rgba(216, 214, 117, 0.286);
 }
 .content-html {
   margin: 20px;

@@ -31,6 +31,7 @@ body {
 
 .example-css {
   display: flex;
+  background-color: rgba(216, 214, 117, 0.286);
   gap: 50%;
   border: dotted 1px red;
   border-radius: 10px;
@@ -39,6 +40,7 @@ body {
 }
 .exercise {
   border: dotted 1px rgb(0, 8, 255);
+  background-color: rgba(95, 199, 215, 0.395);
   border-radius: 10px;
   padding: 30px;
   margin: 20px;
@@ -66,6 +68,7 @@ body {
 }
 .border-example {
   display: flex;
+  background-color: rgba(216, 214, 117, 0.286);
   gap: 5px;
   border: dotted 1px red;
   border-radius: 10px;
@@ -102,6 +105,7 @@ p.floatLeft {
 }
 .display-example {
   display: flex;
+  background-color: rgba(216, 214, 117, 0.286);
   flex-direction: column;
   gap: 20px;
   border: dotted 1px red;
@@ -114,4 +118,189 @@ p.floatLeft {
 }
 .imgFloatLeft {
   float: left;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-item {
+  padding: 20px;
+  background-color: #4caf50;
+  color: white;
+  margin: 10px;
+}
+.example-css-grid {
+  display: flex;
+  background-color: rgba(216, 214, 117, 0.286);
+  flex-direction: column;
+  gap: 20px;
+  border: dotted 1px red;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100px 200px;
+  gap: 10px;
+}
+
+.grid-item {
+  background-color: #ff5733;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-item:nth-child(3) {
+  grid-column: 1 / span 2;
+}
+.transition {
+  width: 100px;
+  height: 100px;
+  background: rgb(133, 25, 25);
+  transition: width 2s;
+}
+
+.transition:hover {
+  width: 300px;
+}
+.keyframes {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  0% {
+    top: 0px;
+    background: red;
+    width: 100px;
+  }
+  100% {
+    top: 200px;
+    background: yellow;
+    width: 300px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For desktop: */
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+@media only screen and (max-width: 980px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+.example-css-responsive {
+  display: flex;
+  background-color: rgba(216, 214, 117, 0.286);
+  flex-direction: column;
+  gap: 20px;
+  border: dotted 1px red;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
 }

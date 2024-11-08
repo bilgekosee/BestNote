@@ -289,7 +289,6 @@ html {
 }
 
 @media only screen and (max-width: 980px) {
-  /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
   }
@@ -303,4 +302,19 @@ html {
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
+}
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a:active {
+  color: blue;
 }

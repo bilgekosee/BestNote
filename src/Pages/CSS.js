@@ -860,8 +860,11 @@ html {
               <strong>ALIŞTIRMA</strong>
             </p>
             <li value="1">
-              Farklı cihaz boyutları için bir medya sorgusu seti hazırlayın. Hem
-              Flexbox hem Grid ile responsive bir layout oluşturun.
+              Farklı ekran genişlikleri için farklı font büyüklükleri ve kutu
+              boyutları ayarlayın.
+            </li>
+            <li value="2">
+              Masaüstü, tablet ve mobil için farklı düzenler oluşturun.
             </li>
           </ol>
         </div>
@@ -874,11 +877,18 @@ html {
         </li>
         <div className="example-css">
           <pre>
-            <code>{`$primary-color: #3498db;
+            <code>{`$primary-color: #333;
 
-body {
+.container {
     color: $primary-color;
+    @mixin center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @include center;
 }
+
 `}</code>
           </pre>
         </div>
@@ -890,6 +900,138 @@ body {
           <strong>Mixins</strong>: Belirli stilleri tekrar kullanmak için
           fonksiyon benzeri yapılardır.
         </li>
+        <div className="exercise">
+          <ol>
+            <p>
+              <strong>ALIŞTIRMA</strong>
+            </p>
+            <li value="1">Sass kullanarak daha karmaşık mixinler oluşturun.</li>
+            <li value="2">
+              Bir sayfa temasında birincil ve ikincil renkler kullanarak dinamik
+              bir stil geliştirin.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div className="content-css">
+        <h2> CSS ile Modern Tasarım Teknikleri</h2>
+        <li>
+          <strong>Hover, Active ve Focus Durumları</strong>: Kullanıcı
+          etkileşimini vurgulayan stiller eklenebilir.
+        </li>
+        <div className="example-css">
+          <pre>
+            <code>{`button:hover {
+    background-color: green;
+}
+`}</code>
+          </pre>
+        </div>
+        <li>
+          <strong>İkonlar ve SVG Kullanımı</strong>: İkonları veya SVG
+          dosyalarını CSS ile stillendirme.
+        </li>
+        <li>
+          <strong>Hiyerarşi Sağlama</strong>: Font büyüklüğü, kalınlık ve renk
+          kullanımıyla sayfa düzeninde hiyerarşi oluşturma.
+        </li>
+        <div className="example-css">
+          <p>
+            <b>
+              <a
+                style={{
+                  fontSize: "30px",
+                }}
+                href="https://en.wikipedia.org/wiki/Shoto_Todoroki"
+                target="_blank"
+              >
+                This is a link
+              </a>
+            </b>
+          </p>
+          <pre>
+            <code>{`<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
+</head>
+<body>
+
+<p><b><a href="default.asp" target="_blank">This is a link</a></b></p>
+
+</body>
+</html>
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-css">
+        <h2>CSS En İyi Uygulamalar ve İleri Teknikler</h2>
+        <li>
+          <strong>Performans Optimizasyonu</strong>: CSS dosyalarını sıkıştırma,
+          gereksiz kodlardan kaçınma.
+        </li>
+
+        <li>
+          <strong>BEM (Block Element Modifier)</strong>: Kod okunabilirliğini
+          artıran, sınıf tabanlı bir isimlendirme sistemi.
+        </li>
+        <div className="example-css">
+          <pre>
+            <code>{`.card__title {
+    font-size: 20px;
+}
+`}</code>
+          </pre>
+        </div>
+        <li>
+          <strong>Dark ve Light Mode</strong>: Karanlık ve aydınlık tema
+          oluşturmak için CSS değişkenleri veya media query kullanma.
+        </li>
+        <div className="example-css">
+          <pre>
+            <code>{`@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+}
+`}</code>
+          </pre>
+        </div>
+        <div className="exercise">
+          <ol>
+            <p>
+              <strong>ALIŞTIRMA</strong>
+            </p>
+            <li value="1">
+              BEM yapısını kullanarak bir kart bileşeni tasarlayın. Farklı
+              Modifier seçenekleri ile tasarımı esnek hale getirin.
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   );

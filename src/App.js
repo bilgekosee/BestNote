@@ -29,6 +29,9 @@ function App() {
   const handleButtonCssClick = () => {
     navigate("/CSS");
   };
+  const handleJavaScripClick = () => {
+    navigate("/JavaScript");
+  };
 
   return (
     <div className="App">
@@ -89,7 +92,7 @@ function App() {
                 tarafından en yaygın kullanılan temel yazılım dillerinin başında
                 gelmektedir.
               </p>
-              <button>Read More</button>
+              <button onClick={handleJavaScripClick}>Read More</button>
             </div>
           </li>
           <li

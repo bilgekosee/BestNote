@@ -1,0 +1,33 @@
+html,
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.js-container h2 {
+  font-family: "Merriweather", serif;
+  font-style: normal;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+.js-container p {
+  margin-left: 15px;
+}
+.content-js {
+  margin: 20px;
+}
+
+.js-container img {
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  margin: auto;
+}
+.content-js li {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+.ul-style {
+  margin-top: 10px;
+  margin-left: 50px;
+}

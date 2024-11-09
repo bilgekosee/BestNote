@@ -256,9 +256,7 @@ console.log("Doğum Yılı:", dogumYili);
               </pre>
             </div>
 
-            <li value="4">
-              Değişken Değerlerini Değiştirme javascript Copy code
-            </li>
+            <li value="4">Değişken Değerlerini Değiştirme javascript</li>
             <div className="example-css">
               <pre>
                 <code>{`let renk = "mavi";
@@ -390,7 +388,7 @@ if (sehir === "Ankara" || sehir === "İstanbul") {
             <li value="1">
               Bir kişinin yaşı 18 veya daha büyükse "Reşitsiniz", aksi takdirde
               "Reşit değilsiniz" mesajı versin. Bu durumda if-else yapısını
-              kullanabilirsin. javascript Copy code
+              kullanabilirsin.
             </li>
             <div className="example-css">
               <pre>

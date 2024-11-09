@@ -10,6 +10,10 @@ body {
   margin-top: 30px;
   margin-left: 15px;
 }
+.js-container h3 {
+  margin-top: 30px;
+  margin-left: 15px;
+}
 .js-container p {
   margin-left: 15px;
   margin-top: 5px;

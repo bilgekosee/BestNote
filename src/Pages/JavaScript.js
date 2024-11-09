@@ -812,7 +812,7 @@ bolum: Bilgisayar Mühendisliği
         </p>
       </div>
       <div className="content-js">
-        <h2>Fonksiyon Tanımlama</h2>
+        <h3>Fonksiyon Tanımlama</h3>
         <p>
           JavaScript’te fonksiyon tanımlamak için function anahtar kelimesini
           kullanırız.
@@ -832,7 +832,7 @@ bolum: Bilgisayar Mühendisliği
       </div>
 
       <div className="content-js">
-        <h2>Fonksiyon Çağırma</h2>
+        <h3>Fonksiyon Çağırma</h3>
         <p>
           Fonksiyonu çalıştırmak için fonksiyon adını ve ardından () kullanırız.
         </p>
@@ -845,7 +845,7 @@ bolum: Bilgisayar Mühendisliği
         </div>
       </div>
       <div className="content-js">
-        <h2>Parametreler ve Argümanlar</h2>
+        <h3>Parametreler ve Argümanlar</h3>
         <p>
           Fonksiyonlara dışarıdan veri göndermek için parametreler kullanırız.
           Fonksiyonu çağırırken bu parametrelere verdiğimiz değerlere ise
@@ -859,8 +859,424 @@ bolum: Bilgisayar Mühendisliği
 
 selamVer("Ali"); // Çıktı: Merhaba, Ali!
 selamVer("Ayşe"); // Çıktı: Merhaba, Ayşe!
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Geri Döndürme (Return) Değeri</h3>
+        <p>
+          Fonksiyonlar, bir işlem sonucunu geri döndürebilir. return anahtar
+          kelimesi ile bu değeri döndürebiliriz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`function topla(sayi1, sayi2) {
+    return sayi1 + sayi2;
+}
+
+let sonuc = topla(5, 3);
+console.log("Toplam:", sonuc); // Çıktı: Toplam: 8
+`}</code>
+          </pre>
+        </div>
+      </div>
+      <div className="content-js">
+        <h3>Arrow (Ok) Fonksiyonları</h3>
+        <p>
+          JavaScript’te function yerine =&gt; kullanarak daha kısa yazılan arrow
+          fonksiyonları da vardır.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`const carp = (a, b) => a * b;
+console.log(carp(4, 5)); // Çıktı: 20
+`}</code>
+          </pre>
+          <p>
+            <strong>Not: </strong>Arrow fonksiyonları, özellikle kısa ve tek
+            satırlık işlemler için oldukça kullanışlıdır.
+          </p>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Diziler (Arrays)</h2>
+        <p>
+          Diziler, birden fazla değeri tek bir değişkende saklamamızı sağlayan
+          veri yapılarıdır. Bir dizi, sıralı bir şekilde verileri saklar ve bu
+          verilere indeksleri aracılığıyla erişebiliriz.
+        </p>
+      </div>
+      <div className="content-js">
+        <h3>Dizi Oluşturma</h3>
+        <p>Bir dizi oluşturmak için köşeli parantez [] kullanırız.</p>
+
+        <div className="example-css">
+          <pre>
+            <code>{`let meyveler = ["Elma", "Muz", "Portakal"];
+`}</code>
+          </pre>
+          <p>
+            Bu örnekte meyveler adında bir dizi tanımladık ve içine üç adet
+            meyve ismi ekledik.
+          </p>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Dizi Elemanlarına Erişim</h3>
+        <p>
+          Dizideki elemanlara indeksleri kullanarak erişiriz. JavaScript'te
+          dizilerin indeksleri 0'dan başlar.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`console.log(meyveler[0]); // Çıktı: Elma
+console.log(meyveler[1]); // Çıktı: Muz
+console.log(meyveler[2]); // Çıktı: Portakal
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Dizi Uzunluğu</h3>
+        <p>
+          Bir dizinin eleman sayısını öğrenmek için length özelliğini
+          kullanırız.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`console.log(meyveler.length); // Çıktı: 3
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Diziye Eleman Ekleme</h3>
+        <ul>
+          <li>Sonuna eklemek için push() kullanılır:</li>
+          <div className="example-css">
+            <pre>
+              <code>{`meyveler.push("Çilek");
+console.log(meyveler); // Çıktı: ["Elma", "Muz", "Portakal", "Çilek"]
+`}</code>
+            </pre>
+          </div>
+          <li>Başına eklemek için unshift() kullanılır:</li>
+          <div className="example-css">
+            <pre>
+              <code>{`meyveler.unshift("Kiraz");
+console.log(meyveler); // Çıktı: ["Kiraz", "Elma", "Muz", "Portakal", "Çilek"]
+`}</code>
+            </pre>
+          </div>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h3>Diziden Eleman Silme</h3>
+        <ul>
+          <li>Son elemanı silmek için pop() kullanılır:</li>
+          <div className="example-css">
+            <pre>
+              <code>{`let sonEleman = meyveler.pop();
+console.log(sonEleman); // Çıktı: Çilek
+console.log(meyveler);   // Çıktı: ["Kiraz", "Elma", "Muz", "Portakal"]
+
+`}</code>
+            </pre>
+          </div>
+          <li>İlk elemanı silmek için shift() kullanılır:</li>
+          <div className="example-css">
+            <pre>
+              <code>{`let ilkEleman = meyveler.shift();
+console.log(ilkEleman); // Çıktı: Kiraz
+console.log(meyveler);  // Çıktı: ["Elma", "Muz", "Portakal"]
+`}</code>
+            </pre>
+          </div>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h3>Dizi Elemanlarını Döngü ile Yazdırma</h3>
+        <ol>
+          <li value="1">for döngüsü kullanarak:</li>
+          <div className="example-css">
+            <pre>
+              <code>{`for (let i = 0; i < meyveler.length; i++) {
+  console.log(meyveler[i]);
+}
+`}</code>
+            </pre>
+          </div>
+          <li value="2">for...of döngüsü kullanarak:</li>
+          <div className="example-css">
+            <pre>
+              <code>{`for (let meyve of meyveler) {
+  console.log(meyve);
+}
+`}</code>
+            </pre>
+          </div>
+        </ol>
+      </div>
+
+      <div className="content-js">
+        <h3>Dizi Metotları</h3>
+        <ul>
+          <li>
+            <strong>indexOf()</strong>: Belirli bir elemanın dizideki indeksini
+            bulur.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let indeks = meyveler.indexOf("Muz");
+console.log(indeks); // Çıktı: 1
+`}</code>
+            </pre>
+          </div>
+          <li>
+            <strong>includes()</strong>: Dizinin belirli bir elemanı içerip
+            içermediğini kontrol eder.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let varMi = meyveler.includes("Portakal");
+console.log(varMi); // Çıktı: true
+`}</code>
+            </pre>
+          </div>
+          <li>
+            <strong>splice()</strong>: Diziden eleman eklemek veya silmek için
+            kullanılır.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`// 1. indeksden başlayarak 1 eleman sil ve yerine "Kivi" ekle
+meyveler.splice(1, 1, "Kivi");
+console.log(meyveler); // Çıktı: ["Elma", "Kivi", "Portakal"]
+`}</code>
+            </pre>
+          </div>
+          <li>
+            <strong>slice()</strong>: Dizinin belirli bir bölümünü yeni bir dizi
+            olarak döndürür.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let yeniDizi = meyveler.slice(0, 2);
+console.log(yeniDizi); // Çıktı: ["Elma", "Kivi"]
+`}</code>
+            </pre>
+          </div>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h3>Çok Boyutlu Diziler</h3>
+        <p>
+          Diziler içinde diziler saklayarak çok boyutlu diziler oluşturabiliriz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`let sayilar = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+console.log(sayilar[0][1]); // Çıktı: 2
+
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Dizi ile Basit Uygulama</h3>
+        <p>
+          Bir öğrencinin notlarını tutan bir dizi oluşturup ortalamasını
+          hesaplayalım.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`let notlar = [90, 85, 78, 92, 88];
+
+let toplam = 0;
+for (let not of notlar) {
+  toplam += not;
+}
+
+let ortalama = toplam / notlar.length;
+console.log("Ortalama Not:", ortalama); // Çıktı: Ortalama Not: 86.6
 
 
+`}</code>
+          </pre>
+        </div>
+      </div>
+      <div className="try-js">
+        <p>
+          <strong>Denemek İster misin?</strong>
+        </p>
+        <ul className="ul-style">
+          <li>
+            Kendi dizi örneklerini oluşturup eleman ekleme, silme ve değiştirme
+            işlemlerini deneyebilirsin.
+          </li>
+          <li>
+            Bir alışveriş listesi oluşturup elemanları ekleyip çıkarabilirsin.
+          </li>
+          <li>
+            Bir dizi içindeki en büyük veya en küçük sayıyı bulmaya
+            çalışabilirsin.
+          </li>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h2>Nesneler Nedir?</h2>
+        <p>
+          Nesneler, JavaScript'te verileri anahtar-değer (key-value) çiftleri
+          olarak saklamamıza olanak tanır. Gerçek dünyadaki varlıkları veya
+          özellikleri modellemek için çok kullanışlıdır. Örneğin, bir kişiyi
+          tanımlarken isim, yaş ve meslek gibi özellikleri tek bir nesnede
+          saklayabiliriz.
+        </p>
+      </div>
+
+      <div className="content-js">
+        <h3>Nesne Oluşturma</h3>
+        <p>
+          Bir nesne oluşturmak için süslü parantez {} kullanırız ve özellikleri
+          (property) anahtar-değer çiftleri olarak ekleriz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`let kisi = {
+    isim: "Ali",
+    yas: 25,
+    meslek: "Mühendis"
+};
+`}</code>
+          </pre>
+          <p>
+            Bu örnekte, kisi adında bir nesne oluşturduk. Bu nesne isim, yas ve
+            meslek özelliklerine sahiptir.
+          </p>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Nesne Özelliklerine Erişim</h3>
+        <p>Nesne özelliklerine iki şekilde erişebiliriz:</p>
+        <ol>
+          <li value="1">Nokta Notasyonu (.)</li>
+          <div className="example-css">
+            <pre>
+              <code>{`console.log(kisi.isim); // Çıktı: Ali
+console.log(kisi.yas);  // Çıktı: 25
+`}</code>
+            </pre>
+          </div>
+          <li value="2">Köşeli Parantez Notasyonu ([])</li>
+          <div className="example-css">
+            <pre>
+              <code>{`console.log(kisi["isim"]); // Çıktı: Ali
+console.log(kisi["yas"]);  // Çıktı: 25
+`}</code>
+            </pre>
+          </div>
+        </ol>
+      </div>
+
+      <div className="content-js">
+        <h3>Nesne Metotları</h3>
+        <p>
+          Nesneler aynı zamanda fonksiyonları özellik olarak saklayabilir. Bu
+          tür özelliklere metot denir.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`let araba = {
+    marka: "Toyota",
+    model: 2020,
+    bilgiVer: function() {
+        return this.marka + " " + this.model;
+    }
+};
+
+console.log(araba.bilgiVer()); // Çıktı: Toyota 2020
+`}</code>
+          </pre>
+          <p>
+            Bu örnekte, bilgiVer adında bir metot oluşturduk. this anahtar
+            kelimesi, o anki nesneye (araba) referans verir.
+          </p>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Nesnelerde Döngü Kullanma</h3>
+        <p>
+          for...in döngüsünü kullanarak bir nesnedeki tüm özellikleri
+          gezebiliriz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`for (let ozellik in kisi) {
+    console.log(ozellik + ": " + kisi[ozellik]);
+}
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`isim: Ali
+yas: 26
+meslek: Mühendis
+sehir: İstanbul
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Nesneler ve Diziler Birlikte</h3>
+        <p>
+          Nesneler ve diziler sıklıkla birlikte kullanılır. Örneğin, bir dizi
+          içinde nesneler saklayabiliriz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`let ogrenciler = [
+    { isim: "Ali", yas: 20 },
+    { isim: "Ayşe", yas: 22 },
+    { isim: "Mehmet", yas: 21 }
+];
+
+for (let ogrenci of ogrenciler) {
+    console.log(ogrenci.isim + " - Yaş: " + ogrenci.yas);
+}
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`Ali - Yaş: 20
+Ayşe - Yaş: 22
+Mehmet - Yaş: 21
 `}</code>
           </pre>
         </div>

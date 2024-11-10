@@ -1281,6 +1281,657 @@ Mehmet - Yaş: 21
           </pre>
         </div>
       </div>
+      <div className="content-js">
+        <h2>Hata Yakalama (Error Handling)</h2>
+        <p>
+          JavaScript'te hataları yakalamak ve yönetmek için try, catch, finally,
+          ve throw yapıları kullanılır.
+        </p>
+        <ol>
+          <li value="1">
+            <strong>try</strong>: Hata oluşabilecek kod bloğunu yazarız.
+          </li>
+          <li value="2">
+            <strong>catch</strong>: Bir hata oluştuğunda çalışacak kodu
+            belirleriz.
+          </li>
+          <li value="3">
+            <strong>finally</strong>: Hata olsa da olmasa da her zaman çalışacak
+            kodu buraya yazarız.
+          </li>
+          <li value="4">
+            <strong>throw</strong>: Kendi özel hatamızı fırlatmak (üretmek) için
+            kullanılır.
+          </li>
+        </ol>
+      </div>
+      <div className="content-js">
+        <h3>try...catch Yapısı</h3>
+        <p>
+          try...catch, bir hata oluştuğunda programın durmasını engelleyerek,
+          hatayı yakalayıp kontrol etmemize olanak tanır.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`try {
+    let sonuc = 10 / 0; // Sıfıra bölme hatası yok ama örnek olarak ele alabiliriz
+    console.log(sonuc);
+} catch (hata) {
+    console.log("Bir hata oluştu: " + hata.message);
+}
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>
+            Çıktı (JavaScript sıfıra bölme hatası vermediği için normalde işlem
+            yapılır ancak hatayı varsayalım):
+          </strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`Bir hata oluştu: Infinity
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>throw ile Hata Fırlatma</h3>
+        <p>
+          throw ile kendi hatalarımızı tanımlayabiliriz. Örneğin, belirli bir
+          koşul karşılanmadığında hata oluşturabiliriz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`function yasKontrol(yas) {
+    if (yas < 18) {
+        throw new Error("Yaş 18'den küçük olamaz.");
+    } else {
+        console.log("Ehliyet başvurusu yapılabilir.");
+    }
+}
+
+try {
+    yasKontrol(15); // Hata fırlatılır
+} catch (hata) {
+    console.log("Hata: " + hata.message);
+}
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`Hata: Yaş 18'den küçük olamaz.
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>finally Bloğu</h3>
+        <p>
+          finally bloğu, hata olsun ya da olmasın her durumda çalışır.
+          Genellikle temizleme işlemleri (örneğin, bir dosya kapatma veya veri
+          tabanı bağlantısını sonlandırma) için kullanılır.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`try {
+    let sonuc = 10 / 2;
+    console.log("Sonuç:", sonuc);
+} catch (hata) {
+    console.log("Bir hata oluştu.");
+} finally {
+    console.log("Bu işlem her durumda çalışır.");
+}
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`Sonuç: 5
+Bu işlem her durumda çalışır.
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h3>Hata Nesnesi</h3>
+        <p>
+          JavaScript’te hata oluştuğunda Error nesnesi üretilir. Bu nesne,
+          message, name gibi özellikler içerir.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`try {
+    let sonuc = sayi / 2; // "sayi" tanımlı değil, bu bir hata oluşturur
+} catch (hata) {
+    console.log("Hata Adı:", hata.name);
+    console.log("Hata Mesajı:", hata.message);
+}
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`Hata Adı: ReferenceError
+Hata Mesajı: sayi is not defined
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Asenkron Programlama Nedir?</h2>
+        <p>
+          Asenkron programlama, işlemleri aynı anda yürütmeyi sağlar.
+          JavaScript, tek iş parçacıklı (single-threaded) bir dildir; yani aynı
+          anda sadece bir işlem yapabilir. Ancak asenkron programlama sayesinde
+          zaman alan işlemler başlatıldığında JavaScript onları beklemeden diğer
+          kodları çalıştırmaya devam eder.
+        </p>
+      </div>
+
+      <div className="content-js">
+        <h2>Callback Fonksiyonları</h2>
+        <p>
+          Asenkron işlemleri yönetmenin ilk yolu callback fonksiyonları
+          kullanmaktır. Bir fonksiyona callback eklediğimizde, işlemin
+          tamamlanmasının ardından bu fonksiyon çalışır.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`function islemYap(callback) {
+    setTimeout(() => {
+        console.log("İşlem tamamlandı.");
+        callback();
+    }, 2000); // 2 saniye bekle
+}
+
+islemYap(() => {
+    console.log("Callback çalıştı.");
+});
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`İşlem tamamlandı.
+Callback çalıştı.
+`}</code>
+          </pre>
+          <p>
+            Bu örnekte islemYap fonksiyonu bir işlem yapıyor ve işlem
+            tamamlanınca callback fonksiyonu çalışıyor.
+          </p>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Promise Yapısı</h2>
+        <p>
+          Promise, JavaScript’te asenkron işlemleri daha kolay yönetmek için
+          kullanılan bir yapıdır. Bir işlem başarılı olduğunda resolve,
+          başarısız olduğunda reject ile sonuçlanır.
+        </p>
+        <br />
+        <p>
+          <strong>Promise Durumları</strong>
+        </p>
+        <ul>
+          <li>
+            <strong>Pending (Beklemede)</strong>: İşlem devam ediyor.
+          </li>
+          <li>
+            <strong>Fulfilled (Tamamlandı)</strong>: İşlem başarıyla tamamlandı.
+          </li>
+          <li>
+            <strong>Rejected (Başarısız)</strong>: İşlem başarısız oldu.
+          </li>
+        </ul>
+        <p>
+          <strong>Promise Oluşturma ve Kullanma</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`let soz = new Promise((resolve, reject) => {
+    let basarili = true; // Bu değeri false yaparak hatayı görebilirsin
+    if (basarili) {
+        resolve("İşlem başarılı!");
+    } else {
+        reject("İşlem başarısız.");
+    }
+});
+
+soz
+    .then(sonuc => console.log(sonuc)) // İşlem başarılıysa çalışır
+    .catch(hata => console.log(hata)); // İşlem başarısızsa çalışır
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı (başarılıysa):</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`İşlem başarılı!
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı (başarısızsa):</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`İşlem başarısız!
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>then ve catch Metotları</strong>
+        </p>
+        <ul>
+          <li>
+            <strong>then()</strong>: resolve edildiğinde (başarılı olduğunda)
+            çalışır.
+          </li>
+          <li>
+            <strong>catch()</strong>: reject edildiğinde (başarısız olduğunda)
+            çalışır.
+          </li>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h2>Async ve Await</h2>
+        <p>
+          async ve await ile asenkron işlemleri daha kolay bir şekilde
+          yazabiliriz. async fonksiyonu içinde await ile bir işlemi
+          bekleyebiliriz. Bu, kodun daha okunaklı ve senkronize görünmesini
+          sağlar.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`function uzunIslem() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Uzun işlem tamamlandı.");
+        }, 2000);
+    });
+}
+
+async function islemYonet() {
+    console.log("İşlem başlıyor...");
+    let sonuc = await uzunIslem(); // Bu işlem bitene kadar bekler
+    console.log(sonuc);
+    console.log("İşlem bitti!");
+}
+
+islemYonet();
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`İşlem başlıyor...
+(Uzun işlem tamamlandıktan sonra)
+Uzun işlem tamamlandı.
+İşlem bitti!
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Asenkron Programlamanın Kullanım Alanları</h2>
+
+        <ul>
+          <li>
+            <strong>API çağrıları</strong>: Sunucudan veri çekmek veya göndermek
+            için.
+          </li>
+          <li>
+            <strong>Dosya işlemleri</strong>: Büyük dosyaları okuma/yazma gibi
+            zaman alan işlemler.
+          </li>
+          <li>
+            <strong>Zamanlayıcılar</strong>: setTimeout ve setInterval ile
+            belirli bir süre sonra işlem başlatma.
+          </li>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h2>DOM'a Erişim</h2>
+        <p>HTML elemanlarına erişmek için birkaç temel yöntem vardır:</p>
+        <ol>
+          <li value="1">
+            <strong>getElementById</strong>: Belirli bir ID'ye sahip olan
+            elementi seçer.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let baslik = document.getElementById("baslik");
+`}</code>
+            </pre>
+          </div>
+          <li value="2">
+            <strong>getElementsByClassName</strong>: Belirli bir sınıf (class)
+            adıyla eşleşen tüm elementleri bir liste olarak seçer.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let kartlar = document.getElementsByClassName("kart");
+`}</code>
+            </pre>
+          </div>
+          <li value="3">
+            <strong>getElementsByTagName</strong>: Belirli bir etiket adıyla
+            eşleşen tüm elementleri bir liste olarak seçer.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let paragraflar = document.getElementsByTagName("p");
+`}</code>
+            </pre>
+          </div>
+          <li value="4">
+            <strong>querySelector</strong>: Belirli bir CSS seçiciyle (selector)
+            eşleşen ilk elementi seçer.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let anaBaslik = document.querySelector("h1");
+`}</code>
+            </pre>
+          </div>
+          <li value="5">
+            <strong>querySelectorAll</strong>: Belirli bir CSS seçiciyle
+            (selector) eşleşen tüm elementleri bir liste olarak seçer
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let butonlar = document.querySelectorAll(".btn");
+`}</code>
+            </pre>
+          </div>
+        </ol>
+      </div>
+      <div className="content-js">
+        <h2>DOM ile İçerik Değiştirme</h2>
+        <p>
+          Eriştiğimiz elemanların içeriğini değiştirmek için innerHTML,
+          textContent veya innerText özelliklerini kullanabiliriz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`<h1 id="baslik">Merhaba Dünya!</h1>
+
+<script>
+    let baslik = document.getElementById("baslik");
+    baslik.innerHTML = "JavaScript ile Güncellendi!";
+</script>
+`}</code>
+          </pre>
+          <p>
+            Bu örnekte, &lt;h1 id="baslik"&gt; elementinin içeriği JavaScript
+            ile Güncellendi! olarak değiştirildi.
+          </p>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>Stil Değiştirme</h2>
+        <p>
+          JavaScript ile elementlerin stillerini değiştirmek için style
+          özelliğini kullanırız.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`let baslik = document.getElementById("baslik");
+baslik.style.color = "blue";
+baslik.style.fontSize = "24px";
+`}</code>
+          </pre>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>DOM ile Yeni Eleman Ekleme</h2>
+        <p>Sayfaya dinamik olarak yeni elemanlar eklemek için:</p>
+        <ol>
+          <li value="1">
+            <strong>createElement</strong>: Yeni bir eleman oluşturur.
+          </li>
+          <li value="2">
+            <strong>appendChild</strong>: Yeni elemanı bir üst elemana ekler.
+          </li>
+        </ol>
+        <div className="example-css">
+          <pre>
+            <code>{`<div id="liste"></div>
+
+<script>
+    let yeniEleman = document.createElement("p");
+    yeniEleman.textContent = "Bu bir yeni paragraf.";
+    
+    let liste = document.getElementById("liste");
+    liste.appendChild(yeniEleman);
+</script>
+`}</code>
+          </pre>
+          <p>Bu kod, liste adlı div elemanının içine yeni bir paragraf ekler</p>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>DOM ile Eleman Silme</h2>
+        <p>
+          Bir elemanı silmek için removeChild veya remove metodunu
+          kullanabiliriz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`<ul id="menu">
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+</ul>
+
+<script>
+    let menu = document.getElementById("menu");
+    let item = menu.querySelector("li");
+    menu.removeChild(item);
+</script>
+`}</code>
+          </pre>
+          <p>Bu kod, menu listesindeki ilk öğeyi (Home) siler.</p>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Olaylar (Events)</h2>
+        <p>
+          DOM ile etkileşimi artırmak için olayları (events) kullanırız. En
+          yaygın kullanılan olaylar:
+        </p>
+        <ul>
+          <li>
+            <strong>click</strong>: Tıklanma olayı.
+          </li>
+          <li>
+            <strong>mouseover</strong>: Üzerine gelme olayı.
+          </li>
+          <li>
+            <strong>mouseout</strong>: Üzerinden ayrılma olayı.
+          </li>
+        </ul>
+        <div className="example-css">
+          <pre>
+            <code>{`<button id="buton">Tıkla!</button>
+
+<script>
+    let buton = document.getElementById("buton");
+    buton.addEventListener("click", function() {
+        alert("Butona tıklandı!");
+    });
+</script>
+`}</code>
+          </pre>
+          <p>Bu örnekte, butona tıklandığında bir uyarı mesajı görüntülenir.</p>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>Local Storage ve Session Storage Nedir?</h2>
+        <ul>
+          <li>
+            <strong>Local Storage</strong>: Tarayıcı kapatıldıktan sonra bile
+            veriyi saklar. Bu, uzun süreli veri saklama için idealdir.
+          </li>
+          <li>
+            <strong>Session Storage</strong>: Veriyi sadece tarayıcı oturumu
+            boyunca saklar. Tarayıcıyı kapattığınızda veya sekmeyi
+            kapattığınızda veri silinir.
+          </li>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h3>Local Storage Kullanımı</h3>
+        <p>
+          Local Storage ile veri saklamak için setItem, getItem, removeItem ve
+          clear gibi metotları kullanırız.
+        </p>
+        <ol>
+          <li value="1">
+            <strong>Veri Saklama</strong>: Veri saklamak için setItem metodunu
+            kullanırız.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`localStorage.setItem("kullaniciAdi", "Ali");
+localStorage.setItem("yas", 25);
+`}</code>
+            </pre>
+          </div>
+          <li value="2">
+            <strong>Veri Okuma</strong>: Veriyi almak için getItem metodunu
+            kullanırız.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`let kullaniciAdi = localStorage.getItem("kullaniciAdi");
+console.log(kullaniciAdi); // Çıktı: Ali
+
+let yas = localStorage.getItem("yas");
+console.log(yas); // Çıktı: 25
+`}</code>
+            </pre>
+          </div>
+
+          <li value="3">
+            <strong>Veri Silme</strong>: Belirli bir veriyi silmek için
+            removeItem metodunu kullanırız.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`localStorage.removeItem("yas");
+`}</code>
+            </pre>
+          </div>
+          <li value="4">
+            <strong>Tüm Veriyi Temizleme</strong>: Tüm veriyi silmek için clear
+            metodunu kullanırız.
+          </li>
+          <div className="example-css">
+            <pre>
+              <code>{`localStorage.clear();
+`}</code>
+            </pre>
+          </div>
+        </ol>
+      </div>
+      <div className="content-js">
+        <h3>Session Storage Kullanımı</h3>
+        <p>
+          Session Storage, Local Storage ile aynı metotlara sahiptir, tek farkı
+          tarayıcı kapatıldığında verinin silinmesidir.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`// Veri Saklama
+sessionStorage.setItem("sehir", "İstanbul");
+
+// Veri Okuma
+let sehir = sessionStorage.getItem("sehir");
+console.log(sehir); // Çıktı: İstanbul
+
+// Veri Silme
+sessionStorage.removeItem("sehir");
+
+// Tüm Veriyi Temizleme
+sessionStorage.clear();
+`}</code>
+          </pre>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>Veriyi JSON Formatında Saklama</h2>
+        <p>
+          Local ve Session Storage yalnızca string veri türünü kabul eder. Bu
+          nedenle, bir nesneyi veya diziyi saklamak için önce JSON.stringify()
+          ile string formatına dönüştürmemiz gerekir. Daha sonra, sakladığımız
+          veriyi tekrar nesne olarak kullanmak için JSON.parse() ile geri
+          dönüştürürüz.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`let kullanici = { isim: "Ali", yas: 25, sehir: "Ankara" };
+
+// Nesneyi string olarak sakla
+localStorage.setItem("kullanici", JSON.stringify(kullanici));
+
+// Veriyi oku ve nesneye dönüştür
+let saklananKullanici = JSON.parse(localStorage.getItem("kullanici"));
+console.log(saklananKullanici.isim); // Çıktı: Ali
+console.log(saklananKullanici.yas);  // Çıktı: 25
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Kullanım Alanları</strong>
+        </p>
+        <ul>
+          <li>
+            <strong>Kullanıcı Tercihlerini Saklama</strong>: Temalar, dil
+            ayarları, bildirim tercihleri gibi kullanıcı tercihlerini saklamak
+            için kullanılabilir.
+          </li>
+          <li>
+            <strong>Form Verilerini Kaydetme</strong>: Kullanıcının doldurduğu
+            form verilerini geçici olarak saklamak için kullanılabilir.
+          </li>
+          <li>
+            <strong>Alışveriş Sepeti</strong>: E-ticaret sitelerinde ürünleri
+            sepetinize ekleyip, sayfayı yenilediğinizde sepetin korunmasını
+            sağlamak için kullanılabilir.
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

@@ -1932,6 +1932,787 @@ console.log(saklananKullanici.yas);  // Çıktı: 25
           </li>
         </ul>
       </div>
+      <div className="content-js">
+        <h2>JSON Nedir?</h2>
+        <p>
+          JSON, anahtar-değer çiftlerinden oluşur ve JavaScript nesnelerine çok
+          benzer. Hem insan tarafından okunabilir hem de makine tarafından
+          kolayca işlenebilir. Özellikle API çağrıları ve veri saklama
+          işlemlerinde JSON formatı tercih edilir.
+        </p>
+        <p>Bir JSON nesnesi örneği: </p>
+
+        <div className="example-css">
+          <pre>
+            <code>{`{
+    "isim": "Ali",
+    "yas": 25,
+    "sehir": "İstanbul",
+    "hobiler": ["kitap okuma", "yüzme", "resim yapma"]
+}
+`}</code>
+          </pre>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>JavaScript Nesnesini JSON Formatına Dönüştürme</h2>
+        <p>
+          JavaScript nesnesini JSON formatına dönüştürmek için JSON.stringify()
+          metodunu kullanırız. Bu işlem, nesneyi string hale getirerek JSON
+          formatına çevirir.
+        </p>
+
+        <div className="example-css">
+          <pre>
+            <code>{`let kisi = {
+    isim: "Ali",
+    yas: 25,
+    sehir: "Ankara"
+};
+
+let jsonString = JSON.stringify(kisi);
+console.log(jsonString);
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`{"isim":"Ali","yas":25,"sehir":"Ankara"}
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>JSON Formatındaki Veriyi JavaScript Nesnesine Dönüştürme</h2>
+        <p>
+          JSON formatında bir veriyi JavaScript nesnesine dönüştürmek için
+          JSON.parse() metodunu kullanırız. Bu işlem, JSON string’ini JavaScript
+          nesnesine çevirir.
+        </p>
+
+        <div className="example-css">
+          <pre>
+            <code>{`let jsonString = '{"isim":"Ali","yas":25,"sehir":"Ankara"}';
+
+let nesne = JSON.parse(jsonString);
+console.log(nesne.isim); // Çıktı: Ali
+console.log(nesne.yas);  // Çıktı: 25
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>JSON ve API İletişimi</h2>
+        <p>
+          JSON, genellikle sunucularla veri alışverişinde kullanılır. Örneğin,
+          bir web API'sinden veri almak veya API’ye veri göndermek için JSON
+          formatı tercih edilir.
+        </p>
+      </div>
+      <div className="content-js">
+        <h2>JSON Kullanım Alanları</h2>
+        <ul>
+          <li>
+            <strong>Veri Saklama</strong>: Local veya Session Storage ile
+            birlikte JSON formatı kullanılarak nesneler saklanabilir.
+          </li>
+          <li>
+            <strong>API İletişimi</strong>: Sunucularla veri alışverişi yaparken
+            JSON formatı veri gönderme ve alma için tercih edilir.
+          </li>
+          <li>
+            <strong>Yapılandırma Dosyaları</strong>: JSON, yapılandırma
+            verilerini saklamak için de kullanılır.
+          </li>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h2>Düzenli İfadeler (Regex) Nedir?</h2>
+        <p>
+          Düzenli ifadeler, belirli bir kalıba veya desene göre metin arama ve
+          eşleştirme işlemleri yapmamızı sağlar. JavaScript'te RegExp nesnesi
+          ile düzenli ifadeler oluşturulur ve çeşitli metotlarla kullanılır.
+        </p>
+      </div>
+
+      <div className="content-js">
+        <h2>Regex Oluşturma Yöntemleri</h2>
+        <p>JavaScript'te iki şekilde düzenli ifade oluşturabiliriz:</p>
+        <ol>
+          <li value="1">
+            <strong>Literal Notasyonu:</strong>
+            <div className="example-css">
+              <pre>
+                <code>{`let regex = /desen/;
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="2">
+            <strong>RegExp Yapıcı Fonksiyonu:</strong>
+            <div className="example-css">
+              <pre>
+                <code>{`let regex = new RegExp("desen");
+`}</code>
+              </pre>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div className="content-js">
+        <h2>Regex Metotları</h2>
+        <p>Düzenli ifadelerle birlikte kullanılan temel metotlar şunlardır:</p>
+        <ul>
+          <li>
+            <strong>test()</strong>: Belirli bir desenin metin içinde olup
+            olmadığını kontrol eder ve true veya false döndürür.
+            <div className="example-css">
+              <pre>
+                <code>{`let regex = /hello/;
+console.log(regex.test("hello world")); // Çıktı: true
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <strong>exec()</strong>: Deseni metin içinde arar ve bir eşleşme
+            varsa detaylı bilgi içeren bir dizi döndürür, aksi takdirde null
+            döndürür.
+            <div className="example-css">
+              <pre>
+                <code>{`let regex = /hello/;
+console.log(regex.exec("hello world")); // Çıktı: ["hello"]
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <strong>match()</strong>: Belirli bir desenin tüm eşleşmelerini
+            bulur ve bir dizi döndürür.
+            <div className="example-css">
+              <pre>
+                <code>{`let metin = "hello world hello";
+let regex = /hello/g;
+console.log(metin.match(regex)); // Çıktı: ["hello", "hello"]
+`}</code>
+              </pre>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div className="content-js">
+        <h2>Regex Operatörleri ve Karakterler</h2>
+        <p>
+          Düzenli ifadelerde sıkça kullanılan bazı özel karakterler ve
+          operatörler:
+        </p>
+        <ol>
+          <li value="1">
+            <strong>^</strong>: Metin başıyla eşleşir.
+          </li>
+          <li value="2">
+            <strong>$</strong>: Metin sonuyla eşleşir.
+          </li>
+          <li value="3">
+            <strong>.</strong>: Tek bir karakterle eşleşir (yeni satır hariç).
+          </li>
+          <li value="4">
+            <strong>*</strong>: Önceki karakterin sıfır veya daha fazla
+            tekrarıyla eşleşir.
+          </li>
+          <li value="5">
+            <strong>+</strong>: Önceki karakterin bir veya daha fazla tekrarıyla
+            eşleşir.
+          </li>
+          <li value="6">
+            <strong>?</strong>: Önceki karakterin sıfır veya bir tekrarıyla
+            eşleşir.
+          </li>
+          <li value="7">
+            <strong>&#123;n&#125;</strong>: Metin başıyla eşleşir.
+          </li>
+          <li value="8">
+            <strong>[abc]</strong>: Kapsayıcı bir grup; "a", "b" veya "c" ile
+            eşleşir.
+          </li>
+          <li value="9">
+            <strong>[a-z]</strong>: Küçük harflerle eşleşir.
+          </li>
+          <li value="10">
+            <strong>[^abc]</strong>: "a", "b" veya "c" dışındaki karakterlerle
+            eşleşir.
+          </li>
+        </ol>
+
+        <div
+          className="example-css"
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <p>
+            <strong>Örnekler:</strong>
+          </p>
+          <ul>
+            <li>
+              <strong>Telefon Numarası Eşleştirme</strong>:
+              /^\d&#123;3&#125;-\d&#123;3&#125;-\d&#123;4&#125;$/
+            </li>
+            <li>
+              <strong>E-posta Eşleştirme</strong>:
+              /^[\w-]+@([\w-]+\.)+[\w-]&#123;2,4&#125;$/
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>Regex Kullanım Örnekleri</h2>
+        <ol>
+          <li value="1">E-posta Doğrulama</li>
+          <div className="example-css">
+            <pre>
+              <code>{`let emailRegex = /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/;
+console.log(emailRegex.test("test@example.com")); // Çıktı: true
+console.log(emailRegex.test("gecersiz-email.com")); // Çıktı: false
+`}</code>
+            </pre>
+          </div>
+          <li value="2">Telefon Numarası Kontrolü</li>
+          <div className="example-css">
+            <pre>
+              <code>{`let telefonRegex = /^\d{3}-\d{3}-\d{4}$/;
+console.log(telefonRegex.test("555-123-4567")); // Çıktı: true
+console.log(telefonRegex.test("5551234567"));   // Çıktı: false
+`}</code>
+            </pre>
+          </div>
+          <li value="3">Sayı Eşleştirme</li>
+          <div className="example-css">
+            <pre>
+              <code>{`let sayiRegex = /^[0-9]+$/;
+console.log(sayiRegex.test("12345")); // Çıktı: true
+console.log(sayiRegex.test("12ab"));  // Çıktı: false
+`}</code>
+            </pre>
+          </div>
+        </ol>
+      </div>
+
+      <div className="content-js">
+        <h2>Modüller Nedir?</h2>
+        <p>
+          Modüller, kodu işlevselliğe göre bölmeyi sağlayan yapılardır. Modüller
+          sayesinde bir dosyada tanımladığımız işlevleri başka dosyalarda
+          kolayca kullanabiliriz. JavaScript’te modüller, import ve export
+          anahtar kelimeleri ile kullanılır.
+        </p>
+      </div>
+
+      <div className="content-js">
+        <h2>Modüllerin Faydaları</h2>
+        <ul>
+          <li>
+            <strong>Kodu Düzenli Tutma</strong>: İşlevleri farklı dosyalarda
+            düzenli olarak saklayabiliriz.
+          </li>
+          <li>
+            <strong>Yeniden Kullanılabilirlik</strong>: Bir işlevi veya
+            değişkeni bir kere tanımlayıp, farklı dosyalarda kullanabiliriz.
+          </li>
+
+          <li>
+            <strong>Bakımı Kolaylaştırır</strong>: Kodun anlaşılabilirliğini
+            artırır ve hata ayıklamayı kolaylaştırır.
+          </li>
+        </ul>
+      </div>
+
+      <div className="content-js">
+        <h2>Modül Oluşturma ve Kullanma</h2>
+        <p>
+          JavaScript'te bir modül oluşturmak için export anahtar kelimesiyle
+          işlev, değişken veya sınıfı dışa aktarırız ve import anahtar
+          kelimesiyle başka bir dosyada bu modülü içe aktarırız.
+        </p>
+        <ol>
+          <li value="1">
+            <strong>export ile Dışa Aktarma</strong>: Bir işlevi veya değişkeni
+            dışa aktarmak için export anahtar kelimesini kullanırız.
+          </li>
+          <div className="example">
+            <pre>
+              <code>{`// hesaplayici.js
+
+export function topla(a, b) {
+    return a + b;
+}
+
+export const pi = 3.14;
+`}</code>
+            </pre>
+            <p>Bu örnekte topla fonksiyonunu ve pi sabitini dışa aktardık.</p>
+          </div>
+          <li value="2">
+            <strong>import ile İçe Aktarma</strong>: Başka bir dosyada import
+            anahtar kelimesi ile bu modülleri kullanabiliriz.
+          </li>
+          <div className="example">
+            <pre>
+              <code>{`// main.js
+
+import { topla, pi } from './hesaplayici.js';
+
+console.log(topla(3, 5)); // Çıktı: 8
+console.log(pi); // Çıktı: 3.14
+`}</code>
+            </pre>
+          </div>
+        </ol>
+      </div>
+
+      <div className="content-js">
+        <h2>Varsayılan Dışa Aktarım (Default Export)</h2>
+        <p>
+          Bir dosyadan yalnızca bir öğeyi varsayılan olarak dışa aktarmak için
+          export default kullanırız. Varsayılan dışa aktarılan bir modülü içe
+          aktarırken {} kullanmamıza gerek yoktur.
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`// hesaplayici.js
+
+export default function carp(a, b) {
+    return a * b;
+}
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Bu modülü içe aktarırken:</strong>
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`// main.js
+
+import carp from './hesaplayici.js';
+
+console.log(carp(4, 5)); // Çıktı: 20
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Hepsini Birden İçe Aktarma (import )</h2>
+        <p>
+          Bir dosyadaki tüm dışa aktarılan öğeleri bir nesne olarak içe aktarmak
+          için import * as sözdizimini kullanabiliriz.
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`// hesaplayici.js
+
+export function topla(a, b) {
+    return a + b;
+}
+
+export function carp(a, b) {
+    return a * b;
+}
+`}</code>
+          </pre>
+        </div>
+        <div className="example">
+          <pre>
+            <code>{`// main.js
+
+import * as hesaplayici from './hesaplayici.js';
+
+console.log(hesaplayici.topla(2, 3)); // Çıktı: 5
+console.log(hesaplayici.carp(4, 5));  // Çıktı: 20
+
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Modüllerin Kullanımı ile İlgili Notlar</h2>
+        <ul>
+          <li>Modüller yalnızca modül dosyaları (.js) arasında çalışır.</li>
+          <li>
+            Bir dosyada birden fazla export olabilir, ancak sadece bir export
+            default olabilir.
+          </li>
+          <li>
+            Tarayıcıda modüllerle çalışmak için &lt;script type="module"&gt;
+            kullanmamız gerekir.
+          </li>
+        </ul>
+        <p>
+          <strong>Örnek:</strong>
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`<script type="module" src="main.js"></script>
+`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Event Loop (Olay Döngüsü) Nedir?</h2>
+        <p>
+          Event Loop, Call Stack ve Callback Queue arasında sürekli olarak döner
+          ve Call Stack boşaldığında Callback Queue'dan işlemleri Call Stack'e
+          ekler. Bu sayede asenkron işlemler, JavaScript'in diğer işlemleri
+          beklemeden çalışmasını sağlar.
+        </p>
+        <p>
+          <strong>İşleyiş Adımları:</strong>
+          <ol>
+            <li value="1">
+              Call Stack boşaldığında, Event Loop Callback Queue'daki işlemi
+              alır.
+            </li>
+            <li value="2">
+              Callback Queue'daki işlem Call Stack'e eklenir ve çalıştırılır.
+            </li>
+            <li value="3">
+              Call Stack tekrar boşaldığında, Event Loop sıradaki işlemi
+              Callback Queue'dan alır.
+            </li>
+          </ol>
+        </p>
+      </div>
+      <div className="content-js">
+        <h2>Örnek Üzerinde Event Loop</h2>
+        <p>
+          Aşağıdaki örnekte, Event Loop'un nasıl çalıştığını daha iyi
+          görebiliriz:
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`console.log("Birinci"); // Sırayla yürütülür
+
+setTimeout(() => {
+    console.log("İkinci (setTimeout)");
+}, 0); // Asenkron işlem, Callback Queue'ya eklenir
+
+console.log("Üçüncü");
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`Birinci
+Üçüncü
+İkinci (setTimeout)
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Bu Örnekte:</strong>
+          <ol>
+            <li value="1">
+              console.log("Birinci"); doğrudan Call Stack'e eklenir ve
+              çalıştırılır.
+            </li>
+            <li value="2">
+              setTimeout ile belirlediğimiz işlem Callback Queue'ya eklenir.
+            </li>
+            <li value="3">
+              console.log("Üçüncü"); Call Stack'te sırayla çalıştırılır.
+            </li>
+            <li value="4">
+              Call Stack boşaldığında, Callback Queue'daki setTimeout fonksiyonu
+              çalıştırılır.
+            </li>
+          </ol>
+        </p>
+      </div>
+      <div className="content-js">
+        <h2>Microtask Queue (Mikro Görev Kuyruğu)</h2>
+        <p>
+          JavaScript'te bir de Microtask Queue adında bir kuyruk vardır. Promise
+          gibi işlemler bu kuyruğa eklenir. Event Loop, Callback Queue'dan önce
+          Microtask Queue'yu kontrol eder, bu nedenle Promise gibi işlemler
+          setTimeout gibi diğer asenkron işlemlerden önce çalışır.
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`console.log("Başla");
+
+setTimeout(() => {
+    console.log("setTimeout");
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("Promise");
+});
+
+console.log("Bitti");
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Çıktı:</strong>
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`Başla
+Bitti
+Promise
+setTimeout
+`}</code>
+          </pre>
+        </div>
+        <p>
+          Burada Promise, Microtask Queue'ya eklenir ve setTimeout'tan önce
+          çalışır.
+        </p>
+      </div>
+
+      <div className="content-js">
+        <h2>Closure Nedir?</h2>
+        <p>
+          Closure, bir fonksiyonun, tanımlandığı ortamın (scope) dışında da
+          kendi değişkenlerine ve parametrelerine erişebilmesini sağlayan bir
+          yapıdır. Yani, bir iç fonksiyon, dış fonksiyonun değişkenlerine
+          erişebilir ve onları kullanabilir. Closures, bir fonksiyonun başka bir
+          fonksiyon tarafından döndürülüp saklanabilmesi durumunda önem kazanır;
+          bu sayede dış fonksiyondaki yerel değişkenler yaşamaya devam eder.
+        </p>
+        <p>
+          <strong>Closure Örneği</strong>: Aşağıda closure ile bir örnek yapalım
+        </p>
+        <div className="example">
+          <pre>
+            <code>{`function sayac() {
+    let sayi = 0; // Dış fonksiyonun yerel değişkeni
+    
+    function arttir() { // İç fonksiyon
+        sayi++;
+        return sayi;
+    }
+    
+    return arttir;
+}
+
+let sayaciCalistir = sayac(); // sayac fonksiyonunu çalıştırıyoruz ve arttir fonksiyonunu döndürüyoruz
+
+console.log(sayaciCalistir()); // Çıktı: 1
+console.log(sayaciCalistir()); // Çıktı: 2
+console.log(sayaciCalistir()); // Çıktı: 3
+`}</code>
+          </pre>
+        </div>
+        <p>
+          <strong>Bu örnekte:</strong>
+          <ul>
+            <li>sayac fonksiyonu, sayi adında bir yerel değişken tanımlar.</li>
+            <li>
+              sayac fonksiyonunun içinde arttir adında bir iç fonksiyon
+              tanımlanır.
+            </li>
+            <li>sayac fonksiyonu, arttir fonksiyonunu döndürür.</li>
+            <li>
+              Her sayaciCalistir() çağrısında sayi değeri korunur ve her
+              seferinde 1 artar.
+            </li>
+          </ul>
+        </p>
+        <p>
+          Bu, closure’ın gücüdür; sayac fonksiyonu tamamlandıktan sonra bile
+          sayi değişkenine erişim devam eder.
+        </p>
+      </div>
+
+      <div className="content-js">
+        <h2>Closures ile Özel Durumlar</h2>
+        <p>
+          Closures, özellikle veri gizliliği veya özel (private) değişkenler
+          oluşturmak için kullanılabilir. Closure sayesinde dışarıdan
+          erişilemeyen değişkenler tanımlayabiliriz.
+        </p>
+        <p>
+          <strong>Örnek:</strong>
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`function gizliMesaj() {
+    let mesaj = "Bu gizli bir mesaj!";
+    
+    return function() {
+        return mesaj;
+    };
+}
+
+let mesajFonksiyonu = gizliMesaj();
+console.log(mesajFonksiyonu()); // Çıktı: Bu gizli bir mesaj!
+`}</code>
+          </pre>
+          <p>
+            Bu örnekte, mesaj değişkeni sadece gizliMesaj fonksiyonunun içinde
+            erişilebilen bir değişkendir. gizliMesaj dışındaki kodlardan mesaj
+            değişkenine erişemeyiz, ancak döndürdüğümüz fonksiyon sayesinde
+            mesaj değerini okuyabiliriz.
+          </p>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>Closures Kullanım Alanları</h2>
+        <ol>
+          <li value="1">
+            <strong>Veri Gizliliği Sağlamak</strong>: Fonksiyon içindeki
+            değişkenleri dışarıdan erişime kapatmak için.
+          </li>
+          <li value="2">
+            <strong>Durum Koruma</strong>: Fonksiyonlar arasında veri taşımak ve
+            saklamak için.
+          </li>
+          <li value="3">
+            <strong>Callback Fonksiyonları ve Event Handlers</strong>:
+            Closure’lar callback fonksiyonlarında ve olay dinleyicilerinde
+            yaygın olarak kullanılır.
+          </li>
+          <li value="4">
+            <strong>Modül Oluşturma</strong>: Kodunuzu kapsülleyip yalnızca
+            gerekli kısımları dışarı açmak için closure kullanarak modüller
+            oluşturabilirsiniz.
+          </li>
+        </ol>
+      </div>
+
+      <div className="content-js">
+        <h2>Sınıflar (Classes) Nedir?</h2>
+        <p>
+          JavaScript sınıfları, nesne tabanlı programlama (Object-Oriented
+          Programming - OOP) prensiplerini uygulamak için kullanılan yapılardır.
+          Sınıflar, bir nesne için şablon görevi görür ve aynı türde nesneler
+          oluşturmak için kullanılır. Sınıfların içinde özellikler (properties)
+          ve metotlar (methods) tanımlanır.
+        </p>
+      </div>
+
+      <div className="content-js">
+        <h2>Sınıf Tanımlama ve Nesne Oluşturma</h2>
+        <p>
+          JavaScript'te bir sınıf tanımlamak için class anahtar kelimesi
+          kullanılır.
+        </p>
+        <p>
+          <strong>Örnek:</strong>
+        </p>
+        <div className="example-css">
+          <img src="./kod.png" width="800px" height="300px"></img>
+          <ul>
+            <li>
+              Araba adında bir sınıf oluşturduk ve constructor metodunu
+              kullanarak nesne özelliklerini tanımladık.
+            </li>
+            <li>this anahtar kelimesi, o anki nesneye referans verir.</li>
+            <li>
+              bilgileriGoster adında bir metot oluşturduk, bu metot her araba
+              nesnesinin bilgilerini ekrana yazdırır.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="content-js">
+        <h2>Sınıf Mirası (Inheritance)</h2>
+        <p>
+          JavaScript sınıfları, miras alma (inheritance) özelliğine sahiptir. Bu
+          özellik, bir sınıfın başka bir sınıfın özellik ve metotlarını
+          devralmasını sağlar. Miras almak için extends anahtar kelimesi
+          kullanılır.
+        </p>
+        <p>
+          <strong>Örnek:</strong>
+        </p>
+        <div className="example-css">
+          <img src="/kkod2.png" width="800px" height="300px"></img>
+          <ul>
+            <li>Arac adında bir üst sınıf oluşturduk.</li>
+            <li>
+              Araba sınıfı, Arac sınıfından miras alarak marka ve model
+              özelliklerine sahip oldu.
+            </li>
+            <li>super() ile üst sınıfın constructor metoduna eriştik.</li>
+          </ul>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>Getter ve Setter Metotları</h2>
+        <p>
+          Getter ve Setter metotları, sınıf özelliklerine kontrollü bir şekilde
+          erişmemizi sağlar. get ve set anahtar kelimeleri ile tanımlanırlar.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`class Kisi {
+    constructor(isim) {
+        this._isim = isim; // Özellik adı başında "_" karakteri ile tanımlanır
+    }
+
+    get isim() {
+        return this._isim.toUpperCase();
+    }
+
+    set isim(yeniIsim) {
+        this._isim = yeniIsim;
+    }
+}
+
+const kisi = new Kisi("Ali");
+console.log(kisi.isim); // Çıktı: ALI
+kisi.isim = "Ayşe";
+console.log(kisi.isim); // Çıktı: AYŞE
+`}</code>
+          </pre>
+          <ul>
+            <li>
+              _isim adında bir özellik tanımladık ve buna get ve set ile erişim
+              sağladık.
+            </li>
+            <li>
+              Getter, isim özelliğine eriştiğimizde büyük harf olarak dönmesini
+              sağladı.
+            </li>
+            <li>Setter ile isim değerini değiştirebildik.</li>
+          </ul>
+        </div>
+      </div>
+      <div className="content-js">
+        <h2>Statik Metotlar</h2>
+        <p>
+          Statik metotlar, sınıfın örneği olmadan doğrudan sınıf üzerinden
+          çağrılabilir. static anahtar kelimesi ile tanımlanır.
+        </p>
+        <div className="example-css">
+          <pre>
+            <code>{`class Matematik {
+    static topla(a, b) {
+        return a + b;
+    }
+}
+
+console.log(Matematik.topla(5, 10)); // Çıktı: 15
+`}</code>
+          </pre>
+          <p>
+            Burada topla metodu, Matematik sınıfından doğrudan çağrılabilir.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

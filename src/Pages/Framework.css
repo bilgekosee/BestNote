@@ -1,0 +1,29 @@
+.framework-container h2 {
+  font-family: "Merriweather", serif;
+  font-style: normal;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+.framework-containerh3 {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+.framework-container p {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.content-framework {
+  margin: 20px;
+}
+
+.framework-container img {
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  margin: auto;
+}
+.content-framework li {
+  margin-top: 10px;
+  margin-left: 50px;
+}

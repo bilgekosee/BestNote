@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Html from "./Pages/Html";
 import CSS from "./Pages/CSS";
 import JavaScript from "./Pages/JavaScript";
+import Framework from "./Pages/Framework";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -16,6 +17,7 @@ root.render(
       <Route path="/Html" element={<Html />} />
       <Route path="/CSS" element={<CSS />} />
       <Route path="/JavaScript" element={<JavaScript />} />
+      <Route path="/Framework" element={<Framework />} />
     </Routes>
   </Router>
 );

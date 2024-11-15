@@ -32,6 +32,9 @@ function App() {
   const handleJavaScripClick = () => {
     navigate("/JavaScript");
   };
+  const handleframeworkClick = () => {
+    navigate("/Framework");
+  };
 
   return (
     <div className="App">
@@ -114,7 +117,7 @@ function App() {
                 kullanarak projelerini daha hızlı ve düzenli bir şekilde
                 oluşturabilirler.
               </p>
-              <button>Read More</button>
+              <button onClick={handleframeworkClick}>Read More</button>
             </div>
           </li>
           <li

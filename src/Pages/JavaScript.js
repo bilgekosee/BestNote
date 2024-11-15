@@ -2713,6 +2713,400 @@ console.log(Matematik.topla(5, 10)); // Çıktı: 15
           </p>
         </div>
       </div>
+      <div className="content-js">
+        <h2>JavaScript'in hata yönetimi (Error Handling)</h2>
+        <ol>
+          <li value="1">
+            <strong>Hata Nesneleri (Error Objects)</strong>: JavaScript'te
+            hatalar Error nesnesi ile temsil edilir ve hataları daha detaylı
+            yönetmek için kendi hata nesnelerimizi oluşturabiliriz. JavaScript,
+            bazı hazır hata türlerini içerir:
+            <ul>
+              <li>
+                <strong>Error</strong>: Genel hata türü
+              </li>
+              <li>
+                <strong>SyntaxError</strong>: Söz dizimi hatası
+              </li>
+              <li>
+                <strong>ReferenceError</strong>: Tanımlanmamış bir değişkene
+                erişim hatası
+              </li>
+              <li>
+                <strong>TypeError</strong>: Yanlış veri türüyle işlem yapılmaya
+                çalışıldığında oluşur
+              </li>
+              <li>
+                <strong>RangeError</strong>: Sayısal bir değerin geçerli
+                aralığın dışında olması durumunda oluşur
+              </li>
+            </ul>
+            <p>
+              Her hata türü, message, name, ve stack gibi özellikler taşır.
+              stack, hatanın nerede ve hangi sırayla oluştuğunu gösterir.
+            </p>
+            <p>
+              <strong>Örnek:</strong>
+            </p>
+            <div className="example-css">
+              <pre>
+                <code>{`try {
+    let sayi = 10;
+    sayi.toUpperCase(); // TypeError: toUpperCase bir sayıya uygulanamaz
+} catch (hata) {
+    console.log("Hata Mesajı:", hata.message);
+    console.log("Hata Türü:", hata.name);
+    console.log("Hata Detayı:", hata.stack);
+}
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="2">
+            <strong>Özel Hata Nesneleri (Custom Errors)</strong>: Kendi hata
+            türlerimizi oluşturarak daha anlamlı hata mesajları verebiliriz. Bu
+            sayede hata durumlarını daha spesifik olarak yönetebiliriz.
+            <p>
+              <strong>Örnek:</strong>
+            </p>
+            <div className="example-css">
+              <pre>
+                <code>{`class OzelHata extends Error {
+    constructor(mesaj) {
+        super(mesaj);
+        this.name = "OzelHata"; // Hata türü olarak özel bir ad veriyoruz
+    }
+}
+
+function kontrolEt(sayi) {
+    if (sayi < 0) {
+        throw new OzelHata("Sayı negatif olamaz!");
+    }
+    return "Sayı pozitif.";
+}
+
+try {
+    console.log(kontrolEt(-5)); // Negatif sayı girildiğinde hata oluşur
+} catch (hata) {
+    console.log(hata.name + ": " + hata.message); // Çıktı: OzelHata: Sayı negatif olamaz!
+}
+`}</code>
+              </pre>
+            </div>
+            <p>
+              Bu örnekte OzelHata adında özel bir hata sınıfı oluşturduk ve
+              kontrolEt fonksiyonu negatif bir sayı aldığında bu hatayı
+              fırlattık.
+            </p>
+          </li>
+          <li value="3">
+            <strong>finally ile Hata Yönetiminde Temizleme İşlemleri</strong>:
+            finally bloğu, hata oluşsa da oluşmasa da her durumda çalışır. Dosya
+            kapatma veya bağlantıyı sonlandırma gibi temizleme işlemlerini
+            finally içinde yapabiliriz.
+            <p>
+              <strong>Örnek:</strong>
+            </p>
+            <div className="example-css">
+              <pre>
+                <code>{`try {
+    let sonuc = 10 / 2;
+    console.log("Sonuç:", sonuc);
+} catch (hata) {
+    console.log("Bir hata oluştu:", hata.message);
+} finally {
+    console.log("Bu işlem her durumda çalışır.");
+}
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="4">
+            <strong>throw ile Hata Fırlatma</strong>: JavaScript’te throw ile
+            herhangi bir değeri hata olarak fırlatabiliriz. Bu değer bir string,
+            number veya Error nesnesi olabilir.
+            <p>
+              <strong>Örnek:</strong>
+            </p>
+            <div className="example-css">
+              <pre>
+                <code>{`function yasKontrol(yas) {
+    if (yas < 18) {
+        throw "Yaş 18'den küçük olamaz."; // String hata fırlatma
+    }
+    return "Ehliyet alabilirsiniz.";
+}
+
+try {
+    console.log(yasKontrol(16));
+} catch (hata) {
+    console.log("Hata:", hata); // Çıktı: Hata: Yaş 18'den küçük olamaz.
+}
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="5">
+            <strong>Asenkron Hata Yönetimi</strong>: Asenkron işlemler (Promise,
+            async/await) ile çalışırken hataları yönetmek için farklı bir
+            yaklaşım gerekebilir.
+            <ul>
+              <li>
+                <strong>Promise Hataları İçin catch()</strong>: Bir Promise
+                zincirinde hata oluştuğunda, catch() metodu ile bu hatayı
+                yakalayabiliriz.
+              </li>
+              <div className="example-css">
+                <pre>
+                  <code>{`let soz = new Promise((resolve, reject) => {
+    reject("Bir hata oluştu!");
+});
+
+soz
+    .then(sonuc => console.log(sonuc))
+    .catch(hata => console.log("Hata:", hata)); // Çıktı: Hata: Bir hata oluştu!
+`}</code>
+                </pre>
+              </div>
+              <li>
+                <strong>Async/Await ile Hata Yönetimi</strong>: async/await
+                yapısında try...catch bloğu ile hataları yönetebiliriz.
+              </li>
+              <div className="example-css">
+                <pre>
+                  <code>{`async function veriGetir() {
+    try {
+        let sonuc = await fetch("https://example.com/api");
+        let veri = await sonuc.json();
+        console.log(veri);
+    } catch (hata) {
+        console.log("Hata oluştu:", hata.message);
+    }
+}
+
+veriGetir();
+`}</code>
+                </pre>
+              </div>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div className="content-js">
+        <h2>Veri Yapıları</h2>
+        <p>JavaScript'te en yaygın kullanılan veri yapıları şunlardır:</p>
+        <ol>
+          <li value="1">
+            <strong>Diziler (Arrays)</strong>: Diziler, sıralı veri saklamak
+            için kullanılan bir yapıdır.
+            <ul>
+              <li>
+                <strong>Özellikleri:</strong>
+                <ul>
+                  <li>Elemanlara indekslerle erişilir.</li>
+                  <li>
+                    push, pop, shift, unshift gibi metotlarla eleman
+                    ekleme/silme yapılabilir.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div className="example-css">
+              <pre>
+                <code>{`let meyveler = ["Elma", "Muz", "Portakal"];
+meyveler.push("Çilek"); // Eleman ekleme
+console.log(meyveler); // Çıktı: ["Elma", "Muz", "Portakal", "Çilek"]
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="2">
+            <strong>Set (Kümeler)</strong>: Set, benzersiz (unique) elemanlardan
+            oluşan bir veri yapısıdır.
+            <ul>
+              <li>
+                <strong>Özellikleri:</strong>
+                <ul>
+                  <li>Aynı değeri birden fazla kez saklamaz.</li>
+                  <li>add, delete, has, ve clear gibi metotlarla yönetilir.</li>
+                </ul>
+              </li>
+            </ul>
+            <div className="example-css">
+              <pre>
+                <code>{`let sayilar = new Set([1, 2, 3, 3, 4]);
+sayilar.add(5);
+console.log(sayilar); // Çıktı: Set(5) { 1, 2, 3, 4, 5 }
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="3">
+            <strong>Map (Haritalar)</strong>: Map, anahtar-değer (key-value)
+            çiftlerinden oluşur ve her anahtar benzersizdir.
+            <ul>
+              <li>
+                <strong>Özellikleri:</strong>
+                <ul>
+                  <li>Anahtarlar herhangi bir veri tipi olabilir.</li>
+                  <li>set, get, delete, ve has metotlarıyla yönetilir.</li>
+                </ul>
+              </li>
+            </ul>
+            <div className="example-css">
+              <pre>
+                <code>{`let ogrenci = new Map();
+ogrenci.set("isim", "Ali");
+ogrenci.set("yas", 25);
+
+console.log(ogrenci.get("isim")); // Çıktı: Ali
+console.log(ogrenci.size); // Çıktı: 2
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="4">
+            <strong>Nesneler (Objects)</strong>: Nesneler, anahtar-değer
+            çiftlerinden oluşur ve genellikle bir varlığı modellemek için
+            kullanılır.
+            <ul>
+              <li>
+                <strong>Özellikleri:</strong>
+                <ul>
+                  <li>Anahtarlar string veya symbol olabilir.</li>
+                  <li>
+                    Dinamik olarak özellik eklenebilir veya kaldırılabilir.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div className="example-css">
+              <pre>
+                <code>{`let kisi = { isim: "Ayşe", yas: 30 };
+kisi.meslek = "Mühendis"; // Yeni özellik ekleme
+console.log(kisi); // Çıktı: { isim: 'Ayşe', yas: 30, meslek: 'Mühendis' }
+`}</code>
+              </pre>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div className="content-js">
+        <h2>Algoritmalar</h2>
+        <ol>
+          <li value="1">
+            <strong>Sıralama Algoritmaları (Sorting Algorithms)</strong>:
+            Dizileri sıralamak için kullanılan algoritmalardır. JavaScript'te
+            sort() metodu kullanılarak diziler sıralanabilir.
+            <div className="example-css">
+              <pre>
+                <code>{`let sayilar = [5, 3, 8, 1];
+sayilar.sort((a, b) => a - b); // Küçükten büyüğe sıralama
+console.log(sayilar); // Çıktı: [1, 3, 5, 8]
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="2">
+            <strong>Arama Algoritmaları (Search Algorithms)</strong>
+            <ul>
+              <li>
+                <strong>Doğrusal Arama (Linear Search)</strong>: Her elemanı
+                sırayla kontrol eder.
+              </li>
+              <li>
+                <strong>İkili Arama (Binary Search)</strong>: Sıralı dizilerde
+                çalışır, elemanları bölerek arama yapar.
+              </li>
+            </ul>
+            <div className="example-css">
+              <pre>
+                <code>{`function linearSearch(arr, hedef) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === hedef) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+console.log(linearSearch([10, 20, 30, 40], 30)); // Çıktı: 2
+`}</code>
+              </pre>
+            </div>
+          </li>
+          <li value="3">
+            <strong>Zaman ve Alan Karmaşıklığı</strong>: Algoritmaların
+            etkinliğini ölçmek için zaman ve alan karmaşıklığı kullanılır.
+            <ul>
+              <li>
+                <strong>Big-O Notasyonu</strong>
+                <ul>
+                  <li>
+                    <strong>O(1)</strong>: Sabit zamanlı (Constant Time)
+                  </li>
+                  <li>
+                    <strong>O(n)</strong>: Doğrusal zamanlı (Linear Time)
+                  </li>
+                  <li>
+                    <strong>O(n^2)</strong>: Kare zamanlı (Quadratic Time)
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        <div className="try-js">
+          <p>
+            <strong>Denemek İster misin?</strong>
+          </p>
+          <ol>
+            <li value="1">
+              <strong> Benzersiz Elemanları Bulma</strong>
+              <div className="example-css">
+                <pre>
+                  <code>{`function benzersizElemanlar(arr) {
+    return [...new Set(arr)];
+}
+
+console.log(benzersizElemanlar([1, 2, 2, 3, 4, 4, 5])); // Çıktı: [1, 2, 3, 4, 5]
+`}</code>
+                </pre>
+              </div>
+            </li>
+            <li value="2">
+              <strong> En Büyük veya En Küçük Elemanı Bulma</strong>
+              <div className="example-css">
+                <pre>
+                  <code>{`function enBuyuk(arr) {
+    return Math.max(...arr);
+}
+
+console.log(enBuyuk([10, 20, 30, 40])); // Çıktı: 40
+`}</code>
+                </pre>
+              </div>
+            </li>
+            <li value="3">
+              <strong>
+                {" "}
+                Dizide Belirli Bir Elemanın Kaç Kez Geçtiğini Bulma
+              </strong>
+              <div className="example-css">
+                <pre>
+                  <code>{`function elemanSayisi(arr, eleman) {
+    return arr.filter(x => x === eleman).length;
+}
+
+console.log(elemanSayisi([1, 2, 2, 3, 4, 2], 2)); // Çıktı: 3
+`}</code>
+                </pre>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
     </div>
   );
 }

@@ -6,10 +6,10 @@ body {
 }
 .example {
   margin: 20px;
-  border: dotted 1px red;
+  background-color: rgba(95, 95, 92, 0.134);
+  border: solid 1px rgb(44, 45, 44);
   border-radius: 10px;
   padding: 20px;
-  background-color: rgba(216, 214, 117, 0.286);
 }
 .content-html {
   margin: 20px;

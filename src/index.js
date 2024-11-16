@@ -7,6 +7,7 @@ import Html from "./Pages/Html";
 import CSS from "./Pages/CSS";
 import JavaScript from "./Pages/JavaScript";
 import Framework from "./Pages/Framework";
+import VersionControl from "./Pages/VersionControl";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,6 +19,7 @@ root.render(
       <Route path="/CSS" element={<CSS />} />
       <Route path="/JavaScript" element={<JavaScript />} />
       <Route path="/Framework" element={<Framework />} />
+      <Route path="/VersionControl" element={<VersionControl />} />
     </Routes>
   </Router>
 );

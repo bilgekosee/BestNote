@@ -35,6 +35,9 @@ function App() {
   const handleframeworkClick = () => {
     navigate("/Framework");
   };
+  const handleVersionControlClick = () => {
+    navigate("/VersionControl");
+  };
 
   return (
     <div className="App">
@@ -136,7 +139,7 @@ function App() {
                 ortama aktarılmasını sağlar, böylece yazılım geliştirme süreci
                 daha güvenilir ve verimli hale gelir.
               </p>
-              <button>Read More</button>
+              <button onClick={handleVersionControlClick}>Read More</button>
             </div>
           </li>
           <li

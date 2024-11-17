@@ -121,6 +121,162 @@ function VersionControl() {
           </ul>
         </p>
       </div>
+      <div className="content-js">
+        <h2>CI/CD: Sürekli Entegrasyon ve Sürekli Dağıtım</h2>
+        <p>
+          <strong> CI/CD Nedir?</strong>
+          <ul>
+            <li>
+              <strong>Sürekli Entegrasyon (CI)</strong>: Kodun düzenli olarak
+              birleştirilmesini sağlar.
+            </li>
+            <li>
+              <strong>Sürekli Dağıtım (CD)</strong>: Kodun sürekli olarak
+              dağıtılmasını sağlar.
+            </li>
+          </ul>
+        </p>
+        <p>
+          <strong>Jenkins Kullanımı</strong>
+          <ol>
+            <li value="1">Jenkins kurun ve yapılandırın.</li>
+            <li value="2">Bir pipeline oluşturun.</li>
+            <li value="3">GitHub deposu ile entegre edin.</li>
+          </ol>
+        </p>
+        <p>
+          <strong>GitHub Actions</strong>: GitHub Actions ile CI/CD işlemleri
+          otomatikleştirilebilir.
+          <div className="example-css">
+            <pre>
+              <code>{`name: CI/CD Pipeline
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+      - run: npm install
+      - run: npm test`}</code>
+            </pre>
+          </div>
+        </p>
+      </div>
+
+      <div className="content-js">
+        <h2>Docker ve Kubernetes</h2>
+        <p>
+          <strong>Docker Kullanımı</strong>
+          <ol>
+            <li value="1">Docker kurulumu yapın.</li>
+            <li value="2">
+              Dockerfile oluşturun:
+              <div className="example-css">
+                <pre>
+                  <code>{`FROM node:14
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+CMD ["npm", "start"]`}</code>
+                </pre>
+              </div>
+            </li>
+            <li value="3">
+              Docker imajı oluşturun ve çalıştırın:
+              <div className="example-css">
+                <pre>
+                  <code>{`docker build -t my-app .
+docker run -p 3000:3000 my-app`}</code>
+                </pre>
+              </div>
+            </li>
+          </ol>
+          <p>
+            <strong>Kubernetes ile Kapsayıcı Yönetimi</strong>
+            <ul>
+              <li>Pod, Deployment ve Service yapılarını öğrenin.</li>
+              <li>
+                Bir YAML dosyası ile dağıtım yapın:{" "}
+                <div className="example-css">
+                  <pre>
+                    <code>{`apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: my-app
+          image: my-app:latest`}</code>
+                  </pre>
+                </div>
+              </li>
+            </ul>
+          </p>
+        </p>
+      </div>
+      <div className="content-js">
+        <h2> İzleme ve Loglama</h2>
+        <p>
+          <strong>Prometheus ve Grafana</strong>: Prometheus, metrik toplamak
+          için kullanılır. Grafana ise görselleştirme yapar.
+        </p>
+        <p>
+          <strong>ELK Stack (Elasticsearch, Logstash, Kibana)</strong>: Loglama
+          için güçlü bir araç setidir
+          <ul>
+            <li>
+              <strong>Logstash</strong>: Veriyi işler.
+            </li>
+            <li>
+              <strong>Elasticsearch</strong>: Veriyi saklar ve sorgular.
+            </li>
+            <li>
+              <strong>Kibana</strong>: Veriyi görselleştirir.
+            </li>
+          </ul>
+        </p>
+      </div>
+      <div className="try-js">
+        <p>
+          <strong>Denemek İster misin?</strong>
+        </p>
+        <p>
+          <strong>Git, CI/CD ve Docker ile Bir Uygulama Dağıtımı</strong>
+        </p>
+        <p>
+          Adımlar:
+          <ul>
+            <li>
+              <strong>Git</strong>: Projeyi bir Git deposuna ekleyin.
+            </li>
+            <li>
+              <strong>CI/CD</strong>: GitHub Actions kullanarak test ve dağıtım
+              süreçlerini otomatikleştirin.
+            </li>
+            <li>
+              <strong>Docker</strong>: Uygulamanızı kapsayıcıya alın.
+            </li>
+            <li>
+              <strong>Kubernetes</strong>: Uygulamanızı ölçekleyin ve yönetin.
+            </li>
+          </ul>
+        </p>
+      </div>
+      <p>
+        Bu tutorial, versiyon kontrol ve DevOps konularında bir yol haritası
+        sunar. Pratik yaparak bu bilgileri pekiştirebilirsiniz. Her adımda daha
+        fazla derinleşmek için araçların dokümantasyonlarını incelemeyi
+        unutmayın!
+      </p>
     </div>
   );
 }

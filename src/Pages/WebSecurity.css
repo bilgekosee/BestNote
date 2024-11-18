@@ -1,0 +1,39 @@
+.webSecurity-container h2 {
+  font-family: "Merriweather", serif;
+  font-style: normal;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+.webSecurity-container h3 {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+.webSecurity-container p {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.content-webSecurity {
+  margin: 20px;
+}
+
+.webSecurity-container img {
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  margin: auto;
+}
+.content-webSecurity li {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.try-js {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(192, 89, 223, 0.286);
+  border: dotted 1px rgb(255, 0, 217);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}

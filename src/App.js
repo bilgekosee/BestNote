@@ -38,6 +38,9 @@ function App() {
   const handleVersionControlClick = () => {
     navigate("/VersionControl");
   };
+  const handleWebSecurityClick = () => {
+    navigate("/WebSecurity");
+  };
 
   return (
     <div className="App">
@@ -157,7 +160,7 @@ function App() {
                 karşı önlemler alarak, kullanıcı verilerinin ve sistemlerin
                 güvenliğini sağlamayı hedefler.
               </p>
-              <button>Read More</button>
+              <button onClick={handleWebSecurityClick}>Read More</button>
             </div>
           </li>
           <li
